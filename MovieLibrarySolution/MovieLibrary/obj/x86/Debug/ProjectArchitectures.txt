@@ -1,0 +1,2 @@
+D:\MovieLibrarySolution\MovieLibrary\MovieLibrary.csproj;x86
+D:\MovieLibrarySolution\MovieLibraryBL\MovieLibraryBL.csproj;x86

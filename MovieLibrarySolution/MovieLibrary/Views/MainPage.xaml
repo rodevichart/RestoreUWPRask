@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="MovieLibrary.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieLibrary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	
+		
+	<Grid x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.RowDefinitions>
+		<RowDefinition Height="Auto" />
+		<RowDefinition Height="*" />
+	</Grid.RowDefinitions>
+
+		<RelativePanel >
+			<Button x:Name="HamburgerButton" Style="{StaticResource }" Content="&#xE700;" Click="HamburgerButton_OnClick"/>
+			<Button x:Name="BackButton" Style="{StaticResource NavBtn}"  Content="&#xE892;" Click="BackButton_Click"  RelativePanel.LeftOf="ForwordButton"/>
+			<Button x:Name="ForwordButton" Style="{StaticResource NavBtn}"  Content="&#xE893;" Click="ForwordButton_Click" RelativePanel.AlignRightWithPanel="True"/>
+		</RelativePanel>
+
+		<SplitView Grid.Row="1" x:Name="SplitView" DisplayMode="CompactInline"  IsPaneOpen="False"
+             CompactPaneLength="35" OpenPaneLength="200">
+			<SplitView.Pane>
+				<Grid>
+				<ListBox SelectionMode="Single" 
+                         Name="IconsListBox" 
+						 ItemContainerStyle="{StaticResource NavListStyle}"
+                         SelectionChanged="IconsListBox_SelectionChanged"
+						 Background="Red">
+					<ListBoxItem Name="MenuButton1">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE825;" />
+							<TextBlock Text="Share" Style="{StaticResource NavTxt}"/>
+						</StackPanel>
+					</ListBoxItem>
+
+					<ListBoxItem Name="MenuButton2">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE10F;" />
+							<TextBlock Text="Favorites" Style="{StaticResource NavTxt}"/>
+						</StackPanel>
+					</ListBoxItem>
+
+						<ListBoxItem Name="MenuButton3">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE1D6;" />
+								<TextBlock Text="Button 3" Style="{StaticResource NavTxt}" />
+							</StackPanel>
+						</ListBoxItem>
+					</ListBox>
+					<StackPanel VerticalAlignment="Bottom">
+						<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE15E;" Margin="12"/>
+						<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE192;" Margin="12"/>
+					</StackPanel>
+				</Grid>
+			</SplitView.Pane>
+			<SplitView.Content>
+				<Frame Name="MainFrame" />
+			</SplitView.Content>
+		</SplitView>
+		
+	</Grid>
+</Page>
