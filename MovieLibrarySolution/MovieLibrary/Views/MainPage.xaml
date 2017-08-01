@@ -29,7 +29,6 @@
 				<Grid>
 				<ListBox SelectionMode="Single" 
                          Name="IconsListBox" 
-						
                          SelectionChanged="IconsListBox_SelectionChanged"
 						 Background="Red">
 					<ListBoxItem Name="MenuButton1">
@@ -52,10 +51,29 @@
 								<TextBlock x:Name="Cortana" Text="Cortana" Style="{StaticResource NavTxt}" />
 							</StackPanel>
 						</ListBoxItem>
+					
 					</ListBox>
 					<StackPanel VerticalAlignment="Bottom">
-						<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE15E;" Margin="12"/>
-						<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE192;" Margin="12"/>
+						<!--<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE15E;" Margin="12"/>
+						<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE192;" Margin="12"/>-->
+						<ListBox SelectionMode="Single" 
+                         Name="BottomIconsListBox" 						
+                         SelectionChanged="IconsListBox_SelectionChanged"
+						 Background="Red">
+							<ListBoxItem Name="SettingsBtn">
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE15E;"/>
+									<TextBlock x:Name="Settings" Text="Settings" Style="{StaticResource NavTxt}"/>
+								</StackPanel>
+							</ListBoxItem>
+
+							<ListBoxItem Name="SignInBtn">
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE192;" />
+									<TextBlock x:Name="SignIn" Text="Sign In" Style="{StaticResource NavTxt}"/>
+								</StackPanel>
+							</ListBoxItem>
+						</ListBox>
 					</StackPanel>
 				</Grid>
 			</SplitView.Pane>

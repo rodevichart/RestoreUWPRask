@@ -63,26 +63,55 @@ namespace MovieLibrary
 
 		private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			if (MenuButton1.IsSelected) {
-				MainFrame.Navigate(typeof(Page1));
-				RelativePanTitle.Text = Share.Text;
-			}
-			else if (MenuButton2.IsSelected)
+			var sendFrom = sender as ListBox;
+
+			if(sendFrom.Name == "IconsListBox")
 			{
-				MainFrame.Navigate(typeof(Page2));
-				RelativePanTitle.Text = Movie.Text;
+				BottomIconsListBox.SelectionChanged -= IconsListBox_SelectionChanged;
+				BottomIconsListBox.SelectedIndex = -1;
+
+				if (MenuButton1.IsSelected)
+				{
+					MainFrame.Navigate(typeof(Page1));
+					RelativePanTitle.Text = Share.Text;
+				}
+				else if (MenuButton2.IsSelected)
+				{
+					MainFrame.Navigate(typeof(Page2));
+					RelativePanTitle.Text = Movie.Text;
+				}
+				else if (MenuButton3.IsSelected)
+				{
+					MainFrame.Navigate(typeof(Page3));
+					RelativePanTitle.Text = Cortana.Text;
+				}
+				BottomIconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
 			}
-			else if (MenuButton3.IsSelected)
+			else
 			{
-				MainFrame.Navigate(typeof(Page3));
-				RelativePanTitle.Text = Cortana.Text;
+				IconsListBox.SelectionChanged -= IconsListBox_SelectionChanged;
+				IconsListBox.SelectedIndex = -1;
+
+				if (SettingsBtn.IsSelected)
+				{
+					MainFrame.Navigate(typeof(Page3));
+					RelativePanTitle.Text = Settings.Text;
+				}
+				else if (SignInBtn.IsSelected)
+				{
+					MainFrame.Navigate(typeof(Page3));
+					RelativePanTitle.Text = SignIn.Text;
+				}
+				IconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
 			}
+
+			
+			
 		}
 
 
 		private void OnNavigated(object sender, NavigationEventArgs e)
 		{
-			// Each time a navigation event occurs, update the Back button's visibility
 			SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
 				((Frame)sender).CanGoBack ?
 				AppViewBackButtonVisibility.Visible :

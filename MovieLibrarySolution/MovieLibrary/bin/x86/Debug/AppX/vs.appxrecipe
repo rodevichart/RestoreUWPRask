@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T07:55:36.148</Modified>
+      <Modified>2017-08-01T09:21:21.271</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.exe">
       <PackagePath>entrypoint\MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T07:55:35.206</Modified>
+      <Modified>2017-08-01T09:21:20.641</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\AutoMapper\6.1.1\lib\netstandard1.3\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
@@ -563,7 +563,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.xr.xml">
       <PackagePath>MovieLibrary.xr.xml</PackagePath>
-      <Modified>2017-08-01T07:55:35.078</Modified>
+      <Modified>2017-08-01T08:35:02.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -572,11 +572,11 @@
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T07:55:35.869</Modified>
+      <Modified>2017-08-01T08:51:41.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\MovieLibrary.exe">
       <PackagePath>MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T07:55:36.143</Modified>
+      <Modified>2017-08-01T09:21:21.267</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

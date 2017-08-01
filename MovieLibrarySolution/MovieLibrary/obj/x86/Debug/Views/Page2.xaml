@@ -10,11 +10,7 @@
 	mc:Ignorable="d">
 
 	<Grid 
-		  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
->
-		<StackPanel>
-			<TextBlock Text="Page 2" FontSize="18"></TextBlock>
-		</StackPanel>
+		  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 		<StackPanel VerticalAlignment="Center"
 					HorizontalAlignment="Center"
