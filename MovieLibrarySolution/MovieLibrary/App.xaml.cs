@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MovieLibrary.RouteConfigurations;
 using MovieLibraryBL;
 using System;
 using System.Collections.Generic;
@@ -18,6 +17,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using MovieLibrary.RoutingSolutionConfigurations;
+using MappingProfile = MovieLibrary.RoutingSolutionConfigurations.MappingProfile;
 
 namespace MovieLibrary
 {
@@ -47,7 +48,7 @@ namespace MovieLibrary
 
 			Mapper.Initialize(c =>
 			{
-				c.AddProfile<RouteConfigurations.MappingProfile>();
+				c.AddProfile<MappingProfile>();
 				c.AddProfile<PlMappingProfile>();
 
 			});

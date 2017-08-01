@@ -18,7 +18,6 @@ D:\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MovieLibraryBL.csprojResolv
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.dll
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.pdb
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.pri
-D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MovieLibraryBL.csprojResolveAssemblyReference.cache
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MovieLibraryBL.dll
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MovieLibraryBL.pdb
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\priconfig.xml

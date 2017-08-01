@@ -496,3 +496,5 @@ D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\resources
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\resources.en.resfiles.intermediate
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\Microsoft.Practices.Unity.RegistrationByConvention.pri.xml
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\ProjectArchitectures.txt
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\Microsoft.Practices.ServiceLocation\en-US\Microsoft.Practices.ServiceLocation.Properties.Resources.resw
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\Microsoft.Practices.Unity\en\Microsoft.Practices.Unity.Properties.Resources.resw

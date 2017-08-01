@@ -5,7 +5,7 @@ using MovieLibrary.ViewModels;
 using MovieLibraryBL.Core;
 using MovieLibraryBL.Services;
 
-namespace MovieLibrary
+namespace MovieLibrary.RoutingSolutionConfigurations
 {
 	public class DiDependencies
 	{

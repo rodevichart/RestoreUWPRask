@@ -17,7 +17,7 @@
       <RootProperty Name="MergedDictionaries" />
       <RootProperty Name="Source" />
     </RootType>
-    <RootType FullName="MovieLibrary.ViewModelLocator" />
+    <RootType FullName="MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Style" />
       <RootProperty Name="Content" />

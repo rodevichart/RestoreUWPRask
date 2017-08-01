@@ -22,15 +22,14 @@ namespace MovieLibrary.ViewModels
 
 			public ObservableCollection<FilmViewModel> Films
 			{
-				get => _films;
-				set => SetProperty(ref _films, value);
+				get { return _films; }
+				set { SetProperty(ref _films, value); }
 			}
-
 
 
 		public int SelectedIndex
 		{
-			get => _selectedIndex;
+			get { return _selectedIndex; }
 			set
 			{
 				if (SetProperty(ref _selectedIndex, value))
@@ -40,7 +39,10 @@ namespace MovieLibrary.ViewModels
 			}
 		}
 
-		public FilmViewModel SelectedFilm => _selectedIndex >= 0 ? _films[_selectedIndex] : null;
+		public FilmViewModel SelectedFilm
+		{
+			get { return _selectedIndex >= 0 ? _films[_selectedIndex] : null; }
+		}
 
 
 		public FilmCollectionViewModel(IMoviesApiService filmService)
@@ -66,7 +68,6 @@ namespace MovieLibrary.ViewModels
 	            }
 	        }
 			
-
 
 			void Movies_OnNotifyPropertyChanged(Object sender, PropertyChangedEventArgs e)
 			{

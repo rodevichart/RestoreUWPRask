@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MovieLibrary"
+    xmlns:routingSolutionConfigurations="using:MovieLibrary.RoutingSolutionConfigurations"
     RequestedTheme="Light">
 
 	<Application.Resources>
@@ -11,7 +12,7 @@
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="/Styles/MainPageStyle.xaml" />
 				<ResourceDictionary>
-					<local:ViewModelLocator x:Key="ViewModelLocator"  />
+					<routingSolutionConfigurations:ViewModelLocator x:Key="ViewModelLocator"  />
 				</ResourceDictionary>
 			</ResourceDictionary.MergedDictionaries>
 

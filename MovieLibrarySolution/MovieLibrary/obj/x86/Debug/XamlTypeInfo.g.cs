@@ -133,7 +133,7 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[12];
-            _typeNameTable[0] = "MovieLibrary.ViewModelLocator";
+            _typeNameTable[0] = "MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "MovieLibrary.ViewModels.FilmCollectionViewModel";
             _typeNameTable[3] = "MovieLibrary.Model.PropetyChangeBase";
@@ -147,7 +147,7 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
             _typeNameTable[11] = "MovieLibrary.Views.Page3";
 
             _typeTable = new global::System.Type[12];
-            _typeTable[0] = typeof(global::MovieLibrary.ViewModelLocator);
+            _typeTable[0] = typeof(global::MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::MovieLibrary.ViewModels.FilmCollectionViewModel);
             _typeTable[3] = typeof(global::MovieLibrary.Model.PropetyChangeBase);
@@ -193,7 +193,7 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_ViewModelLocator() { return new global::MovieLibrary.ViewModelLocator(); }
+        private object Activate_0_ViewModelLocator() { return new global::MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator(); }
         private object Activate_3_PropetyChangeBase() { return new global::MovieLibrary.Model.PropetyChangeBase(); }
         private object Activate_4_MainPageStyle() { return new global::MovieLibrary.MainPageStyle(); }
         private object Activate_6_MainPage() { return new global::MovieLibrary.MainPage(); }
@@ -218,7 +218,7 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  MovieLibrary.ViewModelLocator
+            case 0:   //  MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_ViewModelLocator;
                 userType.AddMemberName("FilmCollectionViewModel");
@@ -299,7 +299,7 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
 
         private object get_0_ViewModelLocator_FilmCollectionViewModel(object instance)
         {
-            var that = (global::MovieLibrary.ViewModelLocator)instance;
+            var that = (global::MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator)instance;
             return that.FilmCollectionViewModel;
         }
         private object get_1_Page2_FilmCollection(object instance)
@@ -320,8 +320,8 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "MovieLibrary.ViewModelLocator.FilmCollectionViewModel":
-                userType = (global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MovieLibrary.ViewModelLocator");
+            case "MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator.FilmCollectionViewModel":
+                userType = (global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType)GetXamlTypeByName("MovieLibrary.RoutingSolutionConfigurations.ViewModelLocator");
                 xamlMember = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlMember(this, "FilmCollectionViewModel", "MovieLibrary.ViewModels.FilmCollectionViewModel");
                 xamlMember.Getter = get_0_ViewModelLocator_FilmCollectionViewModel;
                 xamlMember.SetIsReadOnly();

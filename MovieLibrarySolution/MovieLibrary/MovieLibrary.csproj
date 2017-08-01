@@ -97,19 +97,18 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\IMoviesApiService.cs" />
-    <Compile Include="DiDependencies.cs" />
-    <Compile Include="RouteConfigurations\MappingProfile.cs" />
-    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="RoutingSolutionConfigurations\DiDependencies.cs" />
+    <Compile Include="RoutingSolutionConfigurations\MappingProfile.cs" />
+    <Compile Include="RoutingSolutionConfigurations\ViewModelLocator.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\FakeData.cs" />
     <Compile Include="Model\Film.cs" />
     <Compile Include="Model\FilmCollection.cs" />
     <Compile Include="Model\PropetyChangeBase.cs" />
     <Compile Include="Model\PropetyChangeBaseGeneric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RouteConfigurations\PlMappingProfile.cs" />
+    <Compile Include="RoutingSolutionConfigurations\PlMappingProfile.cs" />
     <Compile Include="ViewModels\FilmCollectionViewModel.cs" />
     <Compile Include="ViewModels\FilmViewModel.cs" />
     <Compile Include="Views\Page1.xaml.cs">

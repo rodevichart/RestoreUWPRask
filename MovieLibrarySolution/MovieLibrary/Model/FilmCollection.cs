@@ -12,7 +12,6 @@ namespace MovieLibrary.Model
 
 		public FilmCollection()
 		{
-			//Films = FakeData.GetData();
 			Films = new List<Film>();
 		}
 

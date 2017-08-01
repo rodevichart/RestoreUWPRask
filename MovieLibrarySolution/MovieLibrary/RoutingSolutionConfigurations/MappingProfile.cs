@@ -2,7 +2,7 @@
 using MovieLibraryBL.DTOs;
 using MovieLibraryBL.Persistance;
 
-namespace MovieLibrary.RouteConfigurations
+namespace MovieLibrary.RoutingSolutionConfigurations
 {
 	public class MappingProfile : Profile
 	{
