@@ -10,6 +10,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,10 +21,10 @@ using Windows.UI.Xaml.Navigation;
 
 namespace MovieLibrary
 {
-    /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
-    /// </summary>
-    sealed partial class App : Application
+	/// <summary>
+	/// Provides application-specific behavior to supplement the default Application class.
+	/// </summary>
+	sealed partial class App : Application
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -53,6 +54,13 @@ namespace MovieLibrary
 
 			});
 
+			var appView = ApplicationView.GetForCurrentView();
+			appView.TitleBar.BackgroundColor = Windows.UI.Colors.Red;
+			appView.TitleBar.InactiveBackgroundColor = Windows.UI.Colors.Red;
+			appView.TitleBar.ButtonBackgroundColor = Windows.UI.Colors.Red;
+			appView.TitleBar.ButtonHoverBackgroundColor = Windows.UI.Colors.Red;
+			appView.TitleBar.ButtonPressedBackgroundColor = Windows.UI.Colors.Red;
+			appView.TitleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.Red;
 
 			Frame rootFrame = Window.Current.Content as Frame;
 
@@ -111,5 +119,8 @@ namespace MovieLibrary
             //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
-    }
+
+
+
+	}
 }

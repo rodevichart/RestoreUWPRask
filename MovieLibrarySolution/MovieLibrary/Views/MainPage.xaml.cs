@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,6 +31,28 @@ namespace MovieLibrary
 		{
 			this.InitializeComponent();
 			MainFrame.Navigate(typeof(Page1));
+		
+				MainFrame.Navigated += OnNavigated;
+
+				// Register a handler for BackRequested events and set the
+				// visibility of the Back button
+				SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+				SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+					MainFrame.CanGoBack ?
+					AppViewBackButtonVisibility.Visible :
+					AppViewBackButtonVisibility.Collapsed;
+			
+			//SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+		}
+
+		private void OnBackRequested(object sender, BackRequestedEventArgs e)
+		{
+
+			if (MainFrame.CanGoBack)
+			{
+				e.Handled = true;
+				MainFrame.GoBack();
+			}
 		}
 
 		private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
@@ -37,46 +60,35 @@ namespace MovieLibrary
 			SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
 		}
 
-		//private void MenuButton1_Click(object sender, RoutedEventArgs e)
-		//{
-		//	MainFrame.Navigate(typeof(Page1));
-		//}
-
-		//private void MenuButton2_Click(object sender, RoutedEventArgs e)
-		//{
-		//	MainFrame.Navigate(typeof(Page2));
-		//}
-
-		//private void MenuButton3_Click(object sender, RoutedEventArgs e)
-		//{
-		//	MainFrame.Navigate(typeof(Page3));
-		//}
-
 
 		private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if (MenuButton1.IsSelected) {
 				MainFrame.Navigate(typeof(Page1));
+				RelativePanTitle.Text = Share.Text;
 			}
-			else if (MenuButton2.IsSelected) { MainFrame.Navigate(typeof(Page2)); }
-			else if (MenuButton3.IsSelected) { MainFrame.Navigate(typeof(Page3)); }
+			else if (MenuButton2.IsSelected)
+			{
+				MainFrame.Navigate(typeof(Page2));
+				RelativePanTitle.Text = Movie.Text;
+			}
+			else if (MenuButton3.IsSelected)
+			{
+				MainFrame.Navigate(typeof(Page3));
+				RelativePanTitle.Text = Cortana.Text;
+			}
 		}
 
-		private void BackButton_Click(object sender, RoutedEventArgs e)
+
+		private void OnNavigated(object sender, NavigationEventArgs e)
 		{
-			if (MainFrame.CanGoBack)
-			{
-				MainFrame.GoBack();
-			}
+			// Each time a navigation event occurs, update the Back button's visibility
+			SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+				((Frame)sender).CanGoBack ?
+				AppViewBackButtonVisibility.Visible :
+				AppViewBackButtonVisibility.Collapsed;
 		}
 
-		private void ForwordButton_Click(object sender, RoutedEventArgs e)
-		{
-			if (MainFrame.CanGoForward)
-			{
-				MainFrame.GoForward();
-			}
-		}
 	}
 
 }

@@ -15,13 +15,9 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ResourceDictionary">
       <RootProperty Name="MergedDictionaries" />
+      <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="MovieLibrary.ViewModelLocator" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Resources" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="DataContext" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Style" />
       <RootProperty Name="Content" />
@@ -47,11 +43,13 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Style" />
       <RootProperty Name="Text" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
-      <RootProperty Name="Children" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Children" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
@@ -60,6 +58,11 @@
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="MovieLibrary.MainPageStyle" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Content" />
+      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -73,11 +76,11 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
       <RootProperty Name="Children" />
-      <RootMethod Name="GetLeftOf" />
-      <RootMethod Name="SetLeftOf" />
-      <RootMethod Name="GetAlignRightWithPanel" />
-      <RootMethod Name="SetAlignRightWithPanel" />
+      <RootMethod Name="GetRightOf" />
+      <RootMethod Name="SetRightOf" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="DisplayMode" />
@@ -94,11 +97,11 @@
       <RootProperty Name="Items" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
       <RootProperty Name="Name" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
       <RootProperty Name="Name" />
     </RootType>

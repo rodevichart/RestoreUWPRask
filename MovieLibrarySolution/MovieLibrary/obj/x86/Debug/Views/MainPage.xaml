@@ -8,48 +8,48 @@
     mc:Ignorable="d">
 	
 		
-	<Grid x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Grid x:ConnectionId='1' x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		<Grid.RowDefinitions>
 		<RowDefinition Height="Auto" />
 		<RowDefinition Height="*" />
 	</Grid.RowDefinitions>
 
-		<RelativePanel x:Name="RelativePan" BorderBrush="Gray" BorderThickness="0,0,0,1">
-			<Button x:Name="HamburgerButton" Style="{StaticResource NavBtn}" Content="&#xE700;" Click="HamburgerButton_OnClick"/>
+		<RelativePanel x:ConnectionId='2' x:Name="RelativePan" BorderBrush="Gray" BorderThickness="1,0,0,0">
+			<Button x:ConnectionId='12' x:Name="HamburgerButton" Style="{StaticResource NavBtn}" Content="&#xE700;"                                />
 
-			<TextBlock x:Name="RelativePanTitle" Foreground="Black"
+			<TextBlock x:ConnectionId='13' x:Name="RelativePanTitle" Foreground="Black"
 					   RelativePanel.RightOf="HamburgerButton" 
 					   FontSize="30"
 					   VerticalAlignment="Center"/>
 		</RelativePanel>
 
-		<SplitView Grid.Row="1" x:Name="SplitView" DisplayMode="CompactInline" IsPaneOpen="False"
+		<SplitView x:ConnectionId='3' Grid.Row="1" x:Name="SplitView" DisplayMode="CompactInline" IsPaneOpen="False"
              CompactPaneLength="45" OpenPaneLength="200">
 			<SplitView.Pane>
 				<Grid>
-				<ListBox SelectionMode="Single" 
+				<ListBox x:ConnectionId='4' SelectionMode="Single" 
                          Name="IconsListBox" 
 						
-                         SelectionChanged="IconsListBox_SelectionChanged"
+                                                                         
 						 Background="Red">
-					<ListBoxItem Name="MenuButton1">
+					<ListBoxItem x:ConnectionId='5' Name="MenuButton1">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE825;"/>
-								<TextBlock x:Name="Share" Text="Share" Style="{StaticResource NavTxt}"/>
+								<TextBlock x:ConnectionId='10' x:Name="Share" Text="Share" Style="{StaticResource NavTxt}"/>
 						</StackPanel>
 					</ListBoxItem>
 
-					<ListBoxItem Name="MenuButton2">
+					<ListBoxItem x:ConnectionId='6' Name="MenuButton2">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE10F;" />
-								<TextBlock x:Name="Movie" Text="Movie" Style="{StaticResource NavTxt}"/>
+								<TextBlock x:ConnectionId='9' x:Name="Movie" Text="Movie" Style="{StaticResource NavTxt}"/>
 						</StackPanel>
 					</ListBoxItem>
 
-						<ListBoxItem Name="MenuButton3">
+						<ListBoxItem x:ConnectionId='7' Name="MenuButton3">
 							<StackPanel Orientation="Horizontal">
 								<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE1D6;" />
-								<TextBlock x:Name="Cortana" Text="Cortana" Style="{StaticResource NavTxt}" />
+								<TextBlock x:ConnectionId='8' x:Name="Cortana" Text="Cortana" Style="{StaticResource NavTxt}" />
 							</StackPanel>
 						</ListBoxItem>
 					</ListBox>
@@ -60,9 +60,10 @@
 				</Grid>
 			</SplitView.Pane>
 			<SplitView.Content>
-				<Frame Name="MainFrame" />
+				<Frame x:ConnectionId='11' Name="MainFrame" />
 			</SplitView.Content>
 		</SplitView>
 		
 	</Grid>
 </Page>
+
