@@ -22857,10 +22857,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj",
+      "projectUniqueName": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj",
       "projectName": "MovieLibraryBL",
-      "projectPath": "D:\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj",
-      "outputPath": "D:\\MovieLibrarySolution\\MovieLibraryBL\\obj\\",
+      "projectPath": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj",
+      "outputPath": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibraryBL\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "uap10.0.10586"

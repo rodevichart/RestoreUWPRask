@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>0954d402-ccd1-41ac-ba3e-27c4259099e3</PackageIdentityName>
     <PackageIdentityPublisher>CN=Artsem_Radzevich</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>D85F7AD0F76FAAFAC0C2474CB18C55C57990FEC57D54615995E2C4C9C9CD52A2</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0954d402-ccd1-41ac-ba3e-27c4259099e3_1.0.0.0_x86__fgahnsh7q9h28</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0954d402-ccd1-41ac-ba3e-27c4259099e3_fgahnsh7q9h28!App</RegisteredUserModeAppID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T11:05:06.505</Modified>
+      <Modified>2017-08-01T12:33:00.205</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.exe">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.exe">
       <PackagePath>entrypoint\MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T11:05:05.299</Modified>
+      <Modified>2017-08-01T12:32:59.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\AutoMapper\6.1.1\lib\netstandard1.3\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
@@ -519,49 +519,49 @@
       <PackagePath>Microsoft.Practices.Unity.dll</PackagePath>
       <Modified>2015-10-05T06:37:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.dll">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.dll">
       <PackagePath>MovieLibraryBL.dll</PackagePath>
-      <Modified>2017-08-01T11:04:44.820</Modified>
+      <Modified>2017-08-01T12:27:12.633</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-07-31T08:11:47.760</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.xr.xml">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.xr.xml">
       <PackagePath>MovieLibrary.xr.xml</PackagePath>
       <Modified>2017-08-01T08:35:02.910</Modified>
     </AppxPackagedFile>
@@ -569,14 +569,14 @@
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-07-24T09:06:17.288</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T11:05:06.165</Modified>
+      <Modified>2017-08-01T12:32:59.966</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\MovieLibrary.exe">
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\MovieLibrary.exe">
       <PackagePath>MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T11:05:06.498</Modified>
+      <Modified>2017-08-01T12:33:00.201</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

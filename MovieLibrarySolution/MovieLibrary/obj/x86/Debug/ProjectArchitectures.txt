@@ -1,2 +1,2 @@
-D:\MovieLibrarySolution\MovieLibrary\MovieLibrary.csproj;x86
-D:\MovieLibrarySolution\MovieLibraryBL\MovieLibraryBL.csproj;x86
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\MovieLibrary.csproj;x86
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\MovieLibraryBL.csproj;x86

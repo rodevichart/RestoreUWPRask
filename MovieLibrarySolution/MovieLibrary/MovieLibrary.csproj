@@ -97,9 +97,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\IMoviesApiService.cs" />
-    <Compile Include="Dependancies.cs" />
+    <Compile Include="DiDependencies.cs" />
     <Compile Include="RouteConfigurations\MappingProfile.cs" />
-    <Compile Include="UnitiDIConfig.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

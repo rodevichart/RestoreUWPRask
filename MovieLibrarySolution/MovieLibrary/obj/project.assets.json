@@ -22926,10 +22926,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MovieLibrarySolution\\MovieLibrary\\MovieLibrary.csproj",
+      "projectUniqueName": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibrary\\MovieLibrary.csproj",
       "projectName": "MovieLibrary",
-      "projectPath": "D:\\MovieLibrarySolution\\MovieLibrary\\MovieLibrary.csproj",
-      "outputPath": "D:\\MovieLibrarySolution\\MovieLibrary\\obj\\",
+      "projectPath": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibrary\\MovieLibrary.csproj",
+      "outputPath": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "uap10.0.10586"
@@ -22937,8 +22937,8 @@
       "frameworks": {
         "uap10.0.10586": {
           "projectReferences": {
-            "D:\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj": {
-              "projectPath": "D:\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj"
+            "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj": {
+              "projectPath": "D:\\C# Tasks\\RestoreUwp\\MovieLibrarySolution\\MovieLibraryBL\\MovieLibraryBL.csproj"
             }
           }
         }

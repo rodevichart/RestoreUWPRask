@@ -13,11 +13,7 @@ namespace MovieLibrary
 
         static ViewModelLocator()
         {
-            _unityContainer = new UnityContainer();
-            _unityContainer.RegisterType<IFilmService, FilmService>();
-			_unityContainer.RegisterType<IMoviesApiService, MoviesApiService>();
-			_unityContainer.RegisterType<FilmCollectionViewModel>();
-            _unityContainer.RegisterType<FilmViewModel>();
+	        _unityContainer = new DiDependencies().RegistrTypes();
         }
 
         public FilmCollectionViewModel FilmCollectionViewModel => _unityContainer.Resolve<FilmCollectionViewModel>();

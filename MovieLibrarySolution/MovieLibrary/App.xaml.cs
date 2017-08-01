@@ -45,8 +45,6 @@ namespace MovieLibrary
         {
 
 
-			new UnitiDIConfig();
-
 			Mapper.Initialize(c =>
 			{
 				c.AddProfile<RouteConfigurations.MappingProfile>();

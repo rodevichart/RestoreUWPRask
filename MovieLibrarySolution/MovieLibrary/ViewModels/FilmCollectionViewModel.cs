@@ -26,9 +26,24 @@ namespace MovieLibrary.ViewModels
 				set => SetProperty(ref _films, value);
 			}
 
-			
 
-			public FilmCollectionViewModel(IMoviesApiService filmService)
+
+		public int SelectedIndex
+		{
+			get => _selectedIndex;
+			set
+			{
+				if (SetProperty(ref _selectedIndex, value))
+				{
+					RaisePropertyChanged(nameof(SelectedFilm));
+				}
+			}
+		}
+
+		public FilmViewModel SelectedFilm => _selectedIndex >= 0 ? _films[_selectedIndex] : null;
+
+
+		public FilmCollectionViewModel(IMoviesApiService filmService)
 			{
 				MovieApiService = filmService;
 				_filmCollection = new FilmCollection();
@@ -52,19 +67,6 @@ namespace MovieLibrary.ViewModels
 	        }
 			
 
-			public int SelectedIndex
-			{
-				get => _selectedIndex;
-				set
-				{
-					if (SetProperty(ref _selectedIndex, value))
-					{
-						RaisePropertyChanged(nameof(SelectedFilm));
-					}
-				}
-			}
-
-			public FilmViewModel SelectedFilm => _selectedIndex >= 0 ? _films[_selectedIndex] : null;
 
 			void Movies_OnNotifyPropertyChanged(Object sender, PropertyChangedEventArgs e)
 			{
