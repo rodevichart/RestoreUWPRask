@@ -116,7 +116,7 @@
     <Compile Include="Persistance\RootObjectList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FilmService.cs" />
-    <Compile Include="Services\IFilmService.cs" />
+    <Compile Include="Core\IFilmService.cs" />
     <EmbeddedResource Include="Properties\MovieLibraryBL.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +130,7 @@
       <Version>4.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

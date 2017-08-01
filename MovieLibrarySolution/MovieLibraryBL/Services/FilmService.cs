@@ -7,6 +7,10 @@ using AutoMapper;
 using MovieLibraryBL.DTOs;
 using MovieLibraryBL.HttpService;
 using MovieLibraryBL.Persistance;
+using MovieLibraryBL.Core;
+using System.Net;
+using System.Net.Http;
+using System.Runtime.Serialization.Json;
 
 namespace MovieLibraryBL.Services
 {
@@ -14,20 +18,20 @@ namespace MovieLibraryBL.Services
 	{
 		private const string Url = "https://netflixroulette.net/api/api.php?";
 
-		public FilmDto GetFilmsByTitleNYear(string title, string year)
-		{
-			var convYear = Convert.ToInt32(year);
+		//public FilmDto GetFilmsByTitleNYear(string title, string year)
+		//{
+		//	var convYear = Convert.ToInt32(year);
 
-			var stringBuilder = new StringBuilder(Url).AppendFormat(@"title={0}", title.Replace(" ", "%20"));
-			var url = (convYear > 0 ? stringBuilder.AppendFormat("&year={0}", year) : stringBuilder).ToString();
+		//	var stringBuilder = new StringBuilder(Url).AppendFormat(@"title={0}", title.Replace(" ", "%20"));
+		//	var url = (convYear > 0 ? stringBuilder.AppendFormat("&year={0}", year) : stringBuilder).ToString();
 
-			var data = new HttpData(url).GetHttpResponeData();
+		//	var data = new HttpData(url).GetHttpResponeData();
 
-			var result = Mapper.Map<RootObject, FilmDto>(data);
+		//	var result = Mapper.Map<RootObject, FilmDto>(data);
 
-			return result;
+		//	return result;
 
-		}
+		//}
 
 		public async Task<IList<FilmDto>> GetFilmsByDirector(string director)
 		{
@@ -35,7 +39,18 @@ namespace MovieLibraryBL.Services
 
 			var url = new StringBuilder(Url).AppendFormat(@"director={0}", director.Replace(" ", "%20")).ToString();
 
-			var data = await new HttpData(url).GetHttpResponeDataListAsync();
+			var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+
+			var respone = await new HttpData(httpRequestMessage).GetHttpResponeDataListAsync();
+
+			var stream = await respone.Content.ReadAsStreamAsync();
+
+			if (stream == null)
+			{
+				return null;
+			}
+
+			var data = (RootObjectList)new DataContractJsonSerializer(typeof(RootObjectList)).ReadObject(stream);
 
 			foreach (var d in data)
 			{

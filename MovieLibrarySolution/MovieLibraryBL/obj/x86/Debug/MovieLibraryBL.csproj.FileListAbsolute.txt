@@ -14,3 +14,4 @@ D:\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\pri.resfiles.intermediate
 D:\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\qualifiers.txt
 D:\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\qualifiers.txt.intermediate
 D:\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MovieLibraryBL.csprojResolveAssemblyReference.cache

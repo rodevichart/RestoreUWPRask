@@ -49,7 +49,7 @@ namespace MovieLibrary
 
 			Mapper.Initialize(c =>
 			{
-				c.AddProfile<MappingProfile>();
+				c.AddProfile<RouteConfigurations.MappingProfile>();
 				c.AddProfile<PlMappingProfile>();
 
 			});

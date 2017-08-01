@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T09:21:21.271</Modified>
+      <Modified>2017-08-01T11:05:06.505</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.exe">
       <PackagePath>entrypoint\MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T09:21:20.641</Modified>
+      <Modified>2017-08-01T11:05:05.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\AutoMapper\6.1.1\lib\netstandard1.3\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
@@ -521,7 +521,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.dll">
       <PackagePath>MovieLibraryBL.dll</PackagePath>
-      <Modified>2017-07-31T12:59:35.184</Modified>
+      <Modified>2017-08-01T11:04:44.820</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -572,11 +572,11 @@
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T08:51:41.530</Modified>
+      <Modified>2017-08-01T11:05:06.165</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\MovieLibrary.exe">
       <PackagePath>MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T09:21:21.267</Modified>
+      <Modified>2017-08-01T11:05:06.498</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

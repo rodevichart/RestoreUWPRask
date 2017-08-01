@@ -92,11 +92,13 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ApiServices\MoviesApiService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core\IMoviesApiService.cs" />
     <Compile Include="Dependancies.cs" />
-    <Compile Include="MappingProfile.cs" />
+    <Compile Include="RouteConfigurations\MappingProfile.cs" />
     <Compile Include="UnitiDIConfig.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
@@ -180,6 +182,7 @@
       <Name>MovieLibraryBL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

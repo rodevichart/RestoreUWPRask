@@ -7,6 +7,8 @@ using MovieLibrary.Model;
 using MovieLibraryBL.Services;
 using AutoMapper;
 using MovieLibraryBL.DTOs;
+using MovieLibraryBL.Core;
+using MovieLibrary.Core;
 
 namespace MovieLibrary.ViewModels
 {
@@ -16,7 +18,7 @@ namespace MovieLibrary.ViewModels
 			private ObservableCollection<FilmViewModel> _films = new ObservableCollection<FilmViewModel>();
 			private int _selectedIndex;
 			
-			public IFilmService FilmService { get; set; }
+			public IMoviesApiService MovieApiService { get; set; }
 
 			public ObservableCollection<FilmViewModel> Films
 			{
@@ -26,24 +28,19 @@ namespace MovieLibrary.ViewModels
 
 			
 
-			public FilmCollectionViewModel(IFilmService filmService)
+			public FilmCollectionViewModel(IMoviesApiService filmService)
 			{
-				FilmService = filmService;
+				MovieApiService = filmService;
 				_filmCollection = new FilmCollection();
 				_selectedIndex = -1;
 				
 			}
 
-			public async Task<IList<Film>> GetFilmsByDirectorAsync(string director)
-			{
-				//var service = new FilmService();
-				var fillData = await FilmService.GetFilmsByDirector(director);
-				return Mapper.Map<IList<FilmDto>, IList<Film>>(fillData);
-			}
+			
 
 		public async Task GetAllFilmsAsync(string director)
 	        {
-				_filmCollection = new FilmCollection(await GetFilmsByDirectorAsync(director));
+				_filmCollection = new FilmCollection(await MovieApiService.GetFilmsByDirectorAsync(director));
 				_films.Clear();
 	            foreach (var movie in _filmCollection.Films)
 	            {

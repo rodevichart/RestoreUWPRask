@@ -21,14 +21,6 @@ namespace MovieLibrary.Model
 			Films = films;
 		}
 
-		//public async Task<ICollection<Film>> GetFilmsByDirectorAsync(string director)
-		//{
-		//	var service = new FilmService();
-		//	var fillData = await service.GetFilmsByDirector(director);
-		//	return Mapper.Map<ICollection<FilmDto>,ICollection<Film>>(fillData);
-		//}
-		
-
 		public void Update(Film movie)
 		{
 
