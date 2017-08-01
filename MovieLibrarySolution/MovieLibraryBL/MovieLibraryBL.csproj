@@ -106,14 +106,15 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Core\IHttpService.cs" />
     <Compile Include="Core\ILogger.cs" />
     <Compile Include="DTOs\FilmDto.cs" />
     <Compile Include="DTOs\FilmListDto.cs" />
-    <Compile Include="HttpService\HttpData.cs" />
+    <Compile Include="HttpService\HttpService.cs" />
     <Compile Include="MappingProfile.cs" />
     <Compile Include="Persistance\Logger.cs" />
-    <Compile Include="Persistance\RootObject.cs" />
-    <Compile Include="Persistance\RootObjectList.cs" />
+    <Compile Include="Persistance\MovieData.cs" />
+    <Compile Include="Persistance\MovieDataList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FilmService.cs" />
     <Compile Include="Core\IFilmService.cs" />

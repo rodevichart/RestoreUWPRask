@@ -3,6 +3,7 @@ using MovieLibrary.ApiServices;
 using MovieLibrary.Core;
 using MovieLibrary.ViewModels;
 using MovieLibraryBL.Core;
+using MovieLibraryBL.HttpService;
 using MovieLibraryBL.Services;
 
 namespace MovieLibrary.RoutingSolutionConfigurations
@@ -16,6 +17,7 @@ namespace MovieLibrary.RoutingSolutionConfigurations
 			UnityContainer = new UnityContainer();
 			UnityContainer.RegisterType<IFilmService, FilmService>();
 			UnityContainer.RegisterType<IMoviesApiService, MoviesApiService>();
+			UnityContainer.RegisterType<IHttpService, HttpService>();
 			UnityContainer.RegisterType<FilmCollectionViewModel>();
 			UnityContainer.RegisterType<FilmViewModel>();
 

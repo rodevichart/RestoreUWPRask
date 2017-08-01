@@ -13,5 +13,6 @@ namespace MovieLibrary.RoutingSolutionConfigurations
         }
 
         public FilmCollectionViewModel FilmCollectionViewModel => _unityContainer.Resolve<FilmCollectionViewModel>();
+		public FilmViewModel FilmViewModel => _unityContainer.Resolve<FilmViewModel>();
     }
 }

@@ -7,21 +7,15 @@ using MovieLibraryBL.Persistance;
 
 namespace MovieLibraryBL.HttpService
 {
-	public class HttpData
+	public class HttpService : IHttpService
 	{
-		public HttpRequestMessage Url { get; set; }
 
-		public HttpData(HttpRequestMessage url)
-		{
-			Url = url;
-		}
-
-		//public RootObject GetHttpResponeData()
+		//public MovieData GetHttpResponeData()
 		//{
 		//	return  HttpRequest(Url);
 		//}
 
-		//private RootObject HttpRequest(string url)
+		//private MovieData HttpRequest(string url)
 		//{
 			
 		//	try
@@ -31,8 +25,8 @@ namespace MovieLibraryBL.HttpService
 		//			var stream =  client.GetStreamAsync(url).Result;
 
 					
-		//				var serializer = new DataContractJsonSerializer(typeof(RootObject));
-		//				var data = (RootObject)serializer.ReadObject(stream);
+		//				var serializer = new DataContractJsonSerializer(typeof(MovieData));
+		//				var data = (MovieData)serializer.ReadObject(stream);
 		//				return data;
 
 		//		}
@@ -44,14 +38,14 @@ namespace MovieLibraryBL.HttpService
 
 		//}
 
-		private async Task<HttpResponseMessage> HttpRequestList(HttpRequestMessage url)
+		public async Task<HttpResponseMessage> GetHttpResponeDataListAsync(HttpRequestMessage url)
 		{
 			try
 			{
 				using (var client = new HttpClient())
 				{
-					var stream = await client.SendAsync(url);
-					return stream;
+					var response = await client.SendAsync(url);
+					return response;
 				}
 			}
 			catch (Exception e)
@@ -59,11 +53,6 @@ namespace MovieLibraryBL.HttpService
 				return null;
 			}
 
-		}
-
-		public async Task<HttpResponseMessage> GetHttpResponeDataListAsync()
-		{
-			return await HttpRequestList(Url);
 		}
 	}
 }

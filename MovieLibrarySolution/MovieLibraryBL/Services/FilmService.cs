@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -18,6 +19,13 @@ namespace MovieLibraryBL.Services
 	{
 		private const string Url = "https://netflixroulette.net/api/api.php?";
 
+		private IHttpService HttpService { get; }
+
+		public FilmService(IHttpService httpService)
+		{
+			HttpService = httpService;
+		}
+
 		//public FilmDto GetFilmsByTitleNYear(string title, string year)
 		//{
 		//	var convYear = Convert.ToInt32(year);
@@ -25,9 +33,9 @@ namespace MovieLibraryBL.Services
 		//	var stringBuilder = new StringBuilder(Url).AppendFormat(@"title={0}", title.Replace(" ", "%20"));
 		//	var url = (convYear > 0 ? stringBuilder.AppendFormat("&year={0}", year) : stringBuilder).ToString();
 
-		//	var data = new HttpData(url).GetHttpResponeData();
+		//	var data = new HttpService(url).GetHttpResponeData();
 
-		//	var result = Mapper.Map<RootObject, FilmDto>(data);
+		//	var result = Mapper.Map<MovieData, FilmDto>(data);
 
 		//	return result;
 
@@ -39,22 +47,13 @@ namespace MovieLibraryBL.Services
 
 			var url = new StringBuilder(Url).AppendFormat(@"director={0}", director.Replace(" ", "%20")).ToString();
 
-			var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+			var stream = await GetStream(url);
 
-			var respone = await new HttpData(httpRequestMessage).GetHttpResponeDataListAsync();
-
-			var stream = await respone.Content.ReadAsStreamAsync();
-
-			if (stream == null)
-			{
-				return null;
-			}
-
-			var data = (RootObjectList)new DataContractJsonSerializer(typeof(RootObjectList)).ReadObject(stream);
+			var data = (MovieDataList) new DataContractJsonSerializer(typeof(MovieDataList)).ReadObject(stream);
 
 			foreach (var d in data)
 			{
-				var dto = Mapper.Map<RootObject, FilmDto>(d);
+				var dto = Mapper.Map<MovieData, FilmDto>(d);
 				result.Add(dto);
 			}
 
@@ -62,7 +61,16 @@ namespace MovieLibraryBL.Services
 			return result;
 		}
 
+		private async Task<Stream> GetStream(string url)
+		{
+			var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, url);
 
+			var respone = await HttpService.GetHttpResponeDataListAsync(httpRequestMessage);
+
+			var stream = await respone.Content.ReadAsStreamAsync();
+
+			return stream;
+		}
 
 	}
 

@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>D85F7AD0F76FAAFAC0C2474CB18C55C57990FEC57D54615995E2C4C9C9CD52A2</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>71F572A4AF7FE70A0E269900EB1B606D4817DE2E0876809E152F8670B3D98A65</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0954d402-ccd1-41ac-ba3e-27c4259099e3_1.0.0.0_x86__fgahnsh7q9h28</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0954d402-ccd1-41ac-ba3e-27c4259099e3_fgahnsh7q9h28!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0954d402-ccd1-41ac-ba3e-27c4259099e3</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T12:33:00.205</Modified>
+      <Modified>2017-08-01T16:27:55.261</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.exe">
       <PackagePath>entrypoint\MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T12:32:59.288</Modified>
+      <Modified>2017-08-01T16:27:53.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\AutoMapper\6.1.1\lib\netstandard1.3\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
@@ -99,9 +99,37 @@
       <PackagePath>System.dll</PackagePath>
       <Modified>2016-07-01T15:10:48.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp\1.5.1\lib\uap10.0\Microsoft.Toolkit.Uwp.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.dll</PackagePath>
+      <Modified>2017-07-19T19:48:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.dll</PackagePath>
+      <Modified>2016-11-15T14:25:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Animations\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Animations.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Animations.dll</PackagePath>
+      <Modified>2016-11-15T14:25:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.dll</PackagePath>
+      <Modified>2016-11-15T14:25:12.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.VisualBasic\10.0.1\lib\netcore50\Microsoft.VisualBasic.dll">
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
       <Modified>2016-06-11T20:13:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+      <Modified>2016-02-22T10:59:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\1.1.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
+      <Modified>2016-02-22T10:59:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Newtonsoft.Json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2016-06-13T20:06:14.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\runtime.any.System.Collections\4.3.0\lib\netcore50\System.Collections.dll">
       <PackagePath>System.Collections.dll</PackagePath>
@@ -519,9 +547,17 @@
       <PackagePath>Microsoft.Practices.Unity.dll</PackagePath>
       <Modified>2015-10-05T06:37:20.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Win2D.uwp\1.18.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
+      <Modified>2016-05-16T00:04:12.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.dll">
       <PackagePath>MovieLibraryBL.dll</PackagePath>
-      <Modified>2017-08-01T12:27:12.633</Modified>
+      <Modified>2017-08-01T14:30:49.863</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Win2D.uwp\1.18.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+      <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
+      <Modified>2016-05-16T00:04:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -563,20 +599,76 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.xr.xml">
       <PackagePath>MovieLibrary.xr.xml</PackagePath>
-      <Modified>2017-08-01T08:35:02.910</Modified>
+      <Modified>2017-08-01T16:27:52.854</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-07-24T09:06:17.288</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\Microsoft.Toolkit.Uwp.UI.Controls.xr.xml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\BladeView\BladeView.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\BladeView\BladeView.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\DropShadowPanel\DropShadowPanel.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\DropShadowPanel\DropShadowPanel.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\GridSplitter\GridSplitter.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\GridSplitter\GridSplitter.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\HamburgerMenu\HamburgerMenu.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\HamburgerMenu\HamburgerMenu.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\HeaderedTextBlock\HeaderedTextBlock.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\HeaderedTextBlock\HeaderedTextBlock.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\ImageEx\ImageEx.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\ImageEx\ImageEx.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\MasterDetailsView\MasterDetailsView.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\MasterDetailsView\MasterDetailsView.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\PullToRefreshListView\PullToRefreshListView.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\PullToRefreshListView\PullToRefreshListView.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\RadialGauge\RadialGauge.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\RadialGauge\RadialGauge.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\RangeSelector\RangeSelector.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\RangeSelector\RangeSelector.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\RotatorTile\RotatorTile.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\RotatorTile\RotatorTile.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\SlidableListItem\SlidableListItem.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\SlidableListItem\SlidableListItem.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\1.2.0\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\Themes\Generic.xaml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\Themes\Generic.xaml</PackagePath>
+      <Modified>2016-11-15T14:24:48.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T12:32:59.966</Modified>
+      <Modified>2017-08-01T16:27:53.764</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\MovieLibrary.exe">
       <PackagePath>MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T12:33:00.201</Modified>
+      <Modified>2017-08-01T16:27:55.255</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

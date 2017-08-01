@@ -2,7 +2,7 @@
 
 namespace MovieLibraryBL.Persistance
 {
-	public class RootObjectList : List<RootObject>
+	public class MovieDataList : List<MovieData>
 	{		
 	}
 }

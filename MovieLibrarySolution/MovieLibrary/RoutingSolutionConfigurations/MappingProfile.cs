@@ -8,7 +8,7 @@ namespace MovieLibrary.RoutingSolutionConfigurations
 	{
 		public MappingProfile()
 		{	
-			CreateMap<RootObject, FilmDto>().ReverseMap();
+			CreateMap<MovieData, FilmDto>().ReverseMap();
 		}
 	}
 }

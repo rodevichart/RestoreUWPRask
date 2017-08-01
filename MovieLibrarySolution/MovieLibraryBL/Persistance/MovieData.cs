@@ -3,7 +3,7 @@
 namespace MovieLibraryBL.Persistance
 {
 	[DataContract]
-	public class RootObject
+	public class MovieData
 	{
 		[DataMember(Name = "unit")]
 		public int Unit { get; set; }

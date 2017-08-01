@@ -8,7 +8,7 @@ namespace MovieLibraryBL
 	{
 		public MappingProfile()
 		{	
-			CreateMap<RootObject, FilmDto>().ReverseMap();
+			CreateMap<MovieData, FilmDto>().ReverseMap();
 		}
 	}
 }

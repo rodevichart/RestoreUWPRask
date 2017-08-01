@@ -22,10 +22,15 @@ namespace MovieLibrary.Views
 	/// </summary>
 	public sealed partial class Page3 : Page
 	{
+		
 		public Page3()
 		{
 			this.InitializeComponent();
 		}
 
-		}
+		//protected override void OnNavigatedTo(NavigationEventArgs e)
+		//{
+		//  var 	e.Parameter as FileMode
+		//}
+	}
 }
