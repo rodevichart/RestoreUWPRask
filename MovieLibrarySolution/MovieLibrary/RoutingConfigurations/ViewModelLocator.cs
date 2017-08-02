@@ -1,7 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using MovieLibrary.ViewModels;
 
-namespace MovieLibrary.RoutingSolutionConfigurations
+namespace MovieLibrary.RoutingConfigurations
 {
     public class ViewModelLocator
     {
@@ -13,6 +13,6 @@ namespace MovieLibrary.RoutingSolutionConfigurations
         }
 
         public FilmCollectionViewModel FilmCollectionViewModel => _unityContainer.Resolve<FilmCollectionViewModel>();
-		public FilmViewModel FilmViewModel => _unityContainer.Resolve<FilmViewModel>();
+		//public FilmViewModel FilmViewModel => _unityContainer.Resolve<FilmViewModel>();
     }
 }

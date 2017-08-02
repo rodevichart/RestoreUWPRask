@@ -16,7 +16,6 @@
 					HorizontalAlignment="Center"
 					Width="500">
 			<TextBox x:ConnectionId='2' x:Name="DirectorName"
-					 
 					 Header="Director"
 					 Text="Besson"
 			         PlaceholderText="Write Director and Press Enter"

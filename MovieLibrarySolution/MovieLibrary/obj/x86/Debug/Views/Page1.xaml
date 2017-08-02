@@ -5,8 +5,6 @@
     xmlns:local="using:MovieLibrary.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:sys="using:System"
-    xmlns:interop="using:Windows.UI.Xaml.Interop" 
 	xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
 	
 
@@ -15,53 +13,52 @@
 
 	<Grid x:ConnectionId='1' x:Name="MainGrid" 
 		Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="Auto"/>
-		</Grid.ColumnDefinitions>
-		<StackPanel Grid.Column="0" VerticalAlignment="Top"
-		            HorizontalAlignment="Center"
-		            Width="200">
-			<TextBox x:ConnectionId='3' x:Name="DirectorName"				 
-			         Header="Get Movies - enter it director"
-			         Text="Besson"
-			         PlaceholderText="Write Director and Press Enter"
-			                                     
-			         Margin="0 0 0 10"/>
-			</StackPanel>
+		<ScrollViewer>
+			<controls:AdaptiveGridView x:ConnectionId='2' ItemsSource="{Binding Films}"
+			                           x:Name="VideoListView"
+			                           ItemHeight="320" DesiredWidth="200"
+			                                                               
+			                           IsItemClickEnabled="True">
+				<controls:AdaptiveGridView.ItemTemplate>
+					<DataTemplate>
+						<RelativePanel Padding="10">
+							<Image Source="/Assets/placeholder-840x630.png"
+							       Stretch="Uniform" 
+							       RelativePanel.AlignTopWithPanel="True"
+							       RelativePanel.AlignLeftWithPanel="True"
+							       RelativePanel.AlignRightWithPanel="True"
+							       Margin="15"
+							       RelativePanel.Above="name"/>
+							
+							<Image x:Name="PosterImage"
+							       Source="{Binding Poster}"
+							       Stretch="Uniform" 
+							       RelativePanel.AlignTopWithPanel="True"
+							       RelativePanel.AlignLeftWithPanel="True"
+							       RelativePanel.AlignRightWithPanel="True"
+							       Margin="15"
+							       RelativePanel.Above="name"/>
+							<TextBlock x:Name="name" Text="{Binding Title}"
+							           HorizontalAlignment="Left"
+							           Margin="15"
+							           TextWrapping="Wrap"
+							           Padding="0,3"
+							           FontSize="12"
+							           Foreground="Black"  FontFamily="Raleway" FontWeight="SemiBold"
+							           RelativePanel.AlignBottomWith="year"/>
+							<TextBlock x:Name="year" Text="{Binding ReleaseYear}"
+							           Margin="1"
+							           HorizontalAlignment="Left"
+							           TextWrapping="Wrap"
+							           FontSize="10"
+							           FontFamily="Raleway" FontWeight="SemiBold"
+							           RelativePanel.AlignBottomWithPanel="True"/>
+						</RelativePanel>
+					</DataTemplate>
 
-		<controls:AdaptiveGridView x:ConnectionId='2' Grid.Column="1" 
-								   ItemsSource="{Binding Films}"
-		                           ItemHeight="400" DesiredWidth="200"
-		                           x:Name="VideoListView"
-		                           IsItemClickEnabled="True"
-		                                                               
-		                           Margin="0" Padding="0">
-			<controls:AdaptiveGridView.ItemTemplate>
-				<DataTemplate>
-					<RelativePanel Padding="10">
-						<Image x:Name="logo"
-						       Source="{Binding Poster}"
-						       Stretch="Uniform" 
-						       RelativePanel.AlignTopWithPanel="True"
-						       RelativePanel.AlignLeftWithPanel="True"
-						       RelativePanel.AlignRightWithPanel="True"
-						       RelativePanel.Above="name"/>
-						<TextBlock x:Name="name" Text="{Binding Title}"
-						           HorizontalAlignment="Left"
-						           Padding="0,3"
-						           Foreground="White"  FontFamily="Raleway" FontWeight="SemiBold"
-						           RelativePanel.AlignBottomWith="year"/>
-						<TextBlock x:Name="year" Text="{Binding ReleaseYear}"
-						           HorizontalAlignment="Left"
-						           FontSize="12"
-						           FontFamily="Raleway" FontWeight="SemiBold"
-						           RelativePanel.AlignBottomWithPanel="True"/>
-					</RelativePanel>
-				</DataTemplate>
-			</controls:AdaptiveGridView.ItemTemplate>
-		</controls:AdaptiveGridView>
+				</controls:AdaptiveGridView.ItemTemplate>
+			</controls:AdaptiveGridView>
+		</ScrollViewer>
 	</Grid>
 </Page>
 

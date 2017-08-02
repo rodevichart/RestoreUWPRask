@@ -34,14 +34,14 @@
 					<ListBoxItem Name="MenuButton1">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE825;"/>
-								<TextBlock x:Name="Share" Text="Share" Style="{StaticResource NavTxt}"/>
+								<TextBlock x:Name="Share" Text="Movie List" Style="{StaticResource NavTxt}"/>
 						</StackPanel>
 					</ListBoxItem>
 
 					<ListBoxItem Name="MenuButton2">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE10F;" />
-								<TextBlock x:Name="Movie" Text="Movie" Style="{StaticResource NavTxt}"/>
+								<TextBlock x:Name="Movie" Text="Search by Director" Style="{StaticResource NavTxt}"/>
 						</StackPanel>
 					</ListBoxItem>
 

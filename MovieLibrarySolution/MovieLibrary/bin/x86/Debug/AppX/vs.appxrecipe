@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T16:27:55.261</Modified>
+      <Modified>2017-08-02T15:07:43.771</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.exe">
       <PackagePath>entrypoint\MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T16:27:53.018</Modified>
+      <Modified>2017-08-02T15:07:41.825</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\AutoMapper\6.1.1\lib\netstandard1.3\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
@@ -553,15 +553,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x86\Debug\MovieLibraryBL.dll">
       <PackagePath>MovieLibraryBL.dll</PackagePath>
-      <Modified>2017-08-01T14:30:49.863</Modified>
+      <Modified>2017-08-02T12:50:58.795</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Win2D.uwp\1.18.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
       <Modified>2016-05-16T00:04:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-07-31T08:11:47.760</Modified>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\person-placeholder.jpg">
+      <PackagePath>Assets\person-placeholder.jpg</PackagePath>
+      <Modified>2017-08-02T14:56:23.274</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\placeholder-image.jpg">
+      <PackagePath>Assets\placeholder-image.jpg</PackagePath>
+      <Modified>2017-08-02T14:18:35.843</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\placeholder-840x630.png">
+      <PackagePath>Assets\placeholder-840x630.png</PackagePath>
+      <Modified>2017-08-02T15:00:29.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -597,9 +605,13 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-07-24T08:50:58.238</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2017-07-31T08:11:47.760</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.xr.xml">
       <PackagePath>MovieLibrary.xr.xml</PackagePath>
-      <Modified>2017-08-01T16:27:52.854</Modified>
+      <Modified>2017-08-02T14:32:47.044</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -664,11 +676,11 @@
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-01T16:27:53.764</Modified>
+      <Modified>2017-08-02T15:07:42.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\Core\MovieLibrary.exe">
       <PackagePath>MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-01T16:27:55.255</Modified>
+      <Modified>2017-08-02T15:07:43.767</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

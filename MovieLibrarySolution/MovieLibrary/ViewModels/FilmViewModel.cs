@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using Windows.ApplicationModel;
-using MovieLibrary.Model;
+﻿using MovieLibrary.Model;
 
 namespace MovieLibrary.ViewModels
 {
@@ -148,8 +142,8 @@ namespace MovieLibrary.ViewModels
 			:base(film)
 		{	
 		}
-		
 
+		
 		public string Title
 		{
 			get { return This.Title; }

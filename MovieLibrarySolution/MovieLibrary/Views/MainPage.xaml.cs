@@ -16,7 +16,7 @@ namespace MovieLibrary.Views
 		public MainPage()
 		{
 			this.InitializeComponent();
-			MainFrame.Navigate(typeof(Page2));
+			MainFrame.Navigate(typeof(Page1));
 		
 				MainFrame.Navigated += OnNavigated;
 

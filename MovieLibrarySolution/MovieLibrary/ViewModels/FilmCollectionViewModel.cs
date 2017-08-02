@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using MovieLibrary.Model;
-using MovieLibraryBL.Services;
-using AutoMapper;
-using MovieLibraryBL.DTOs;
-using MovieLibraryBL.Core;
 using MovieLibrary.Core;
 
 namespace MovieLibrary.ViewModels
@@ -55,7 +50,7 @@ namespace MovieLibrary.ViewModels
 
 			
 
-		public async Task GetAllFilmsAsync(string director)
+		public async Task GetFilmsByDirectorAsync(string director)
 	        {
 				_filmCollection = new FilmCollection(await MovieApiService.GetFilmsByDirectorAsync(director));
 				_films.Clear();
@@ -67,9 +62,20 @@ namespace MovieLibrary.ViewModels
 
 	            }
 	        }
-			
 
-			void Movies_OnNotifyPropertyChanged(Object sender, PropertyChangedEventArgs e)
+		public async Task GetFilmsByNDirectorAsync()
+		{
+			_filmCollection = new FilmCollection(await MovieApiService.GetFilmsByNDirectorAsync());
+			foreach (var movie in _filmCollection.Films)
+			{
+				var nm = new FilmViewModel(movie);
+				nm.PropertyChanged += Movies_OnNotifyPropertyChanged;
+				_films.Add(nm);
+
+			}
+		}
+
+		void Movies_OnNotifyPropertyChanged(Object sender, PropertyChangedEventArgs e)
 			{
 				_filmCollection.Update((FilmViewModel)sender);
 			}

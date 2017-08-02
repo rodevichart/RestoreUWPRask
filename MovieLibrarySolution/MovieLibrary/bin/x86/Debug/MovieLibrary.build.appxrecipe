@@ -418,8 +418,14 @@
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Win2D.uwp\1.18.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\person-placeholder.jpg">
+      <PackagePath>Assets\person-placeholder.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\placeholder-image.jpg">
+      <PackagePath>Assets\placeholder-image.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\placeholder-840x630.png">
+      <PackagePath>Assets\placeholder-840x630.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -447,6 +453,9 @@
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x86\Debug\MovieLibrary.xr.xml">
       <PackagePath>MovieLibrary.xr.xml</PackagePath>

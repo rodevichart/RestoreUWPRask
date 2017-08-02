@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MovieLibraryBL.DTOs;
-using MovieLibraryBL.HttpService;
 using MovieLibraryBL.Persistance;
 using MovieLibraryBL.Core;
-using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization.Json;
 
@@ -45,7 +42,7 @@ namespace MovieLibraryBL.Services
 		{
 			var result = new List<FilmDto>();
 
-			var url = new StringBuilder(Url).AppendFormat(@"director={0}", director.Replace(" ", "%20")).ToString();
+			var url = GetUrl(Url, ApiRoutingConsts.Director, director);
 
 			var stream = await GetStream(url);
 
@@ -61,6 +58,11 @@ namespace MovieLibraryBL.Services
 			return result;
 		}
 
+		private string GetUrl(string urlApi, string apiRoutingConsts, string param)
+		{
+			return Uri.EscapeUriString($"{urlApi}{apiRoutingConsts}={param}");
+		}
+
 		private async Task<Stream> GetStream(string url)
 		{
 			var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, url);
@@ -74,5 +76,8 @@ namespace MovieLibraryBL.Services
 
 	}
 
-
+	public class ApiRoutingConsts
+	{
+		public static readonly string Director = "director";
+	}
 }

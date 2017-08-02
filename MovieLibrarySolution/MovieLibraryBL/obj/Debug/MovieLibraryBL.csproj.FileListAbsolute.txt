@@ -1,0 +1,17 @@
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\MovieLibraryBL.csprojResolveAssemblyReference.cache
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\bin\Debug\MovieLibraryBL.dll
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\bin\Debug\MovieLibraryBL.pdb
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\bin\Debug\MovieLibraryBL.pri
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\MovieLibraryBL.dll
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\MovieLibraryBL.pdb
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\priconfig.xml
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\priconfig.xml.intermediate
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\layout.resfiles
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\layout.resfiles.intermediate
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\resources.resfiles
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\resources.resfiles.intermediate
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\pri.resfiles
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\pri.resfiles.intermediate
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\qualifiers.txt
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\qualifiers.txt.intermediate
+c:\users\artsem_radzevich\documents\visual studio 2017\Projects\MovieLibraryBL\obj\Debug\MultipleQualifiersPerDimensionFound.txt

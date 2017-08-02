@@ -2343,8 +2343,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -4763,8 +4762,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -7222,8 +7220,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -9651,8 +9648,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -12119,8 +12115,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -14548,8 +14543,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     },
@@ -17016,8 +17010,7 @@
         "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "AutoMapper": "6.1.1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
-          "Unity": "4.0.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
         }
       }
     }
@@ -23692,7 +23685,7 @@
       },
       "Microsoft.Toolkit.Uwp.UI.Controls": {
         "target": "Package",
-        "version": "[1.2.0, )"
+        "version": "1.2.0"
       },
       "Unity": {
         "target": "Package",
@@ -23716,7 +23709,7 @@
           },
           "Microsoft.Toolkit.Uwp.UI.Controls": {
             "target": "Package",
-            "version": "[1.2.0, )"
+            "version": "1.2.0"
           },
           "Unity": {
             "target": "Package",

@@ -5,9 +5,53 @@
     xmlns:local="using:MovieLibrary.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=FilmViewModel}"
     mc:Ignorable="d">
- 
+	<Page.Resources>
+		<Style TargetType="TextBlock" x:Key="TxtBlock">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="FontFamily" Value="Tahoma"/>
+			<Setter Property="Margin" Value="25,0,0,0"/>
+		</Style>
+
+		<Style TargetType="TextBox" x:Key="TxtBx">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="FontFamily" Value="Tahoma"/>
+			<Setter Property="Margin" Value="25,0,0,0"/>
+		</Style>
+	</Page.Resources>
+	
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<Image Grid.Column="0" Source="/Assets/placeholder-840x630.png"
+		       Height="900" Width="500"
+		       Stretch="Uniform" />
+
+		<Image Grid.Column="0" Source="{x:Bind FilmViewModel.Poster}"
+			   Height="900" Width="500"
+		       Stretch="Uniform" />
+		
+		<StackPanel Grid.Column="1" Width="350"
+		            Height="400"
+		            Margin="0 15 0 15">
+			<TextBlock Text="Title"/>
+			<TextBlock TextWrapping="Wrap" Style="{StaticResource TxtBlock}" Text="{x:Bind FilmViewModel.Title, Mode=OneWay}"/>
+			<TextBlock Text="Duration"/>
+			<TextBlock Style="{StaticResource TxtBlock}" Text="{x:Bind FilmViewModel.Duration, Mode=OneWay}"/>
+			<TextBlock Text="Director"/>
+			<TextBlock Style="{StaticResource TxtBlock}" Text="{x:Bind FilmViewModel.Director, Mode=OneWay}"/>
+			<TextBlock Text="Release Year"/>
+			<TextBlock Style="{StaticResource TxtBlock}" Text="{x:Bind FilmViewModel.ReleaseYear, Mode=OneWay}"/>
+			<TextBlock Text=" Poster Url"/>
+			<TextBox TextWrapping="NoWrap" Style="{StaticResource TxtBx}" Text="{x:Bind FilmViewModel.Poster, Mode=OneWay}"/>
+		</StackPanel>
+		
 	</Grid>
 </Page>

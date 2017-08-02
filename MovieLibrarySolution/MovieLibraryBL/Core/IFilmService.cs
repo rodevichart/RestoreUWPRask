@@ -7,6 +7,5 @@ namespace MovieLibraryBL.Core
 	public interface IFilmService
 	{
 		Task<IList<FilmDto>> GetFilmsByDirector(string director);
-		//FilmDto GetFilmsByTitleNYear(string title, string year);
 	}
 }

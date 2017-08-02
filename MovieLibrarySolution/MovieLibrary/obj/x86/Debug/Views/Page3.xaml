@@ -1,14 +1,58 @@
-﻿<Page
+﻿<Page x:ConnectionId='1'
     x:Class="MovieLibrary.Views.Page3"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MovieLibrary.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=FilmViewModel}"
     mc:Ignorable="d">
- 
+	<Page.Resources>
+		<Style TargetType="TextBlock" x:Key="TxtBlock">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="FontFamily" Value="Tahoma"/>
+			<Setter Property="Margin" Value="25,0,0,0"/>
+		</Style>
+
+		<Style TargetType="TextBox" x:Key="TxtBx">
+			<Setter Property="FontSize" Value="30"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontWeight" Value="Medium"/>
+			<Setter Property="FontFamily" Value="Tahoma"/>
+			<Setter Property="Margin" Value="25,0,0,0"/>
+		</Style>
+	</Page.Resources>
+	
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<Image Grid.Column="0" Source="/Assets/placeholder-840x630.png"
+		       Height="900" Width="500"
+		       Stretch="Uniform" />
+
+		<Image x:ConnectionId='2' Grid.Column="0"                                       
+			   Height="900" Width="500"
+		       Stretch="Uniform" />
+		
+		<StackPanel Grid.Column="1" Width="350"
+		            Height="400"
+		            Margin="0 15 0 15">
+			<TextBlock Text="Title"/>
+			<TextBlock x:ConnectionId='3' TextWrapping="Wrap" Style="{StaticResource TxtBlock}"                                                 />
+			<TextBlock Text="Duration"/>
+			<TextBlock x:ConnectionId='4' Style="{StaticResource TxtBlock}"                                                    />
+			<TextBlock Text="Director"/>
+			<TextBlock x:ConnectionId='5' Style="{StaticResource TxtBlock}"                                                    />
+			<TextBlock Text="Release Year"/>
+			<TextBlock x:ConnectionId='6' Style="{StaticResource TxtBlock}"                                                       />
+			<TextBlock Text=" Poster Url"/>
+			<TextBox x:ConnectionId='7' TextWrapping="NoWrap" Style="{StaticResource TxtBx}"                                                  />
+		</StackPanel>
+		
 	</Grid>
 </Page>
 

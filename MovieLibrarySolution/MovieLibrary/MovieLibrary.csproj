@@ -97,9 +97,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\IMoviesApiService.cs" />
-    <Compile Include="RoutingSolutionConfigurations\DiDependencies.cs" />
-    <Compile Include="RoutingSolutionConfigurations\MappingProfile.cs" />
-    <Compile Include="RoutingSolutionConfigurations\ViewModelLocator.cs" />
+    <Compile Include="RoutingConfigurations\DiDependencies.cs" />
+    <Compile Include="RoutingConfigurations\MappingProfile.cs" />
+    <Compile Include="RoutingConfigurations\ViewModelLocator.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -108,7 +108,7 @@
     <Compile Include="Model\PropetyChangeBase.cs" />
     <Compile Include="Model\PropetyChangeBaseGeneric.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoutingSolutionConfigurations\PlMappingProfile.cs" />
+    <Compile Include="RoutingConfigurations\PlMappingProfile.cs" />
     <Compile Include="ViewModels\FilmCollectionViewModel.cs" />
     <Compile Include="ViewModels\FilmViewModel.cs" />
     <Compile Include="Views\Page1.xaml.cs">
@@ -128,6 +128,9 @@
     <None Include="MovieLibrary_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\person-placeholder.jpg" />
+    <Content Include="Assets\placeholder-840x630.png" />
+    <Content Include="Assets\placeholder-image.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -182,27 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MovieLibraryBL\MovieLibraryBL.csproj">
-      <Project>{0F3C39D7-A9DF-46B4-9284-C1647DCC40DC}</Project>
+      <Project>{70d6db1f-b187-475e-aed3-7fb5f42452fb}</Project>
       <Name>MovieLibraryBL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Toolkit.Uwp, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\x86\Debug\Microsoft.Toolkit.Uwp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Toolkit.Uwp.UI, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\x86\Debug\Microsoft.Toolkit.Uwp.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Toolkit.Uwp.UI.Animations, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\x86\Debug\Microsoft.Toolkit.Uwp.UI.Animations.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Toolkit.Uwp.UI.Controls, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\x86\Debug\Microsoft.Toolkit.Uwp.UI.Controls.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

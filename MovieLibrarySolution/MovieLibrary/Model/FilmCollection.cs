@@ -1,8 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
-using MovieLibraryBL.Services;
-using MovieLibraryBL.DTOs;
 
 namespace MovieLibrary.Model
 {

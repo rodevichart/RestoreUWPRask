@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-
+﻿
 namespace MovieLibrary.Model
 {
 	public class Film

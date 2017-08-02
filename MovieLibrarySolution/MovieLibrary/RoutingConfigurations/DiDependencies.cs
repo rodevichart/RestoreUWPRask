@@ -6,7 +6,7 @@ using MovieLibraryBL.Core;
 using MovieLibraryBL.HttpService;
 using MovieLibraryBL.Services;
 
-namespace MovieLibrary.RoutingSolutionConfigurations
+namespace MovieLibrary.RoutingConfigurations
 {
 	public class DiDependencies
 	{
