@@ -1,8 +1,10 @@
 ﻿using System;
 using Windows.System;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using MovieLibrary.ViewModels;
@@ -25,6 +27,8 @@ namespace MovieLibrary.Views
 			{
 				FilmCollection = DataContext as FilmCollectionViewModel;
 			};
+
+	
 			this.InitializeComponent();
 
 			
@@ -48,5 +52,7 @@ namespace MovieLibrary.Views
 
 			Frame.Navigate(typeof(Page3), e.ClickedItem);
 		}
+
+
 	}
 }

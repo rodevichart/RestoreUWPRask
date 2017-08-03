@@ -1,5 +1,6 @@
 ﻿using MovieLibrary.ViewModels;
 using Windows.System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
@@ -29,6 +30,7 @@ namespace MovieLibrary.Views
 		{
 			if (e.Key == VirtualKey.Enter)
 			{
+				MovieDataStkPnl.Visibility = Visibility.Visible;
 				await FilmCollection.GetFilmsByDirectorAsync(DirectorName.Text);
 			}
 		}

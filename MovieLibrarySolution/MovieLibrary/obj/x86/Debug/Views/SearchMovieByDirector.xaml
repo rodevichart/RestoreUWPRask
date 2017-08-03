@@ -1,0 +1,86 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="MovieLibrary.Views.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieLibrary.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:m="using:MovieLibrary.ViewModels"
+	 DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=FilmCollectionViewModel}"
+	mc:Ignorable="d">
+
+	<Grid>
+		<Grid.Background>
+			<ImageBrush ImageSource="/Assets/bg_MyPrime_Ziggo.jpg"/>
+		</Grid.Background>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		
+		<StackPanel Grid.Column="0"
+		            VerticalAlignment="Center"
+		            HorizontalAlignment="Center"
+					Height="700"
+		            Width="600">
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Enter Director Name"/>
+			<TextBox x:ConnectionId='9' x:Name="DirectorName"
+					 Style="{StaticResource TxtBx}"
+			         Text="Besson"
+			         PlaceholderText="Write Director and Press Enter"
+			                                     
+			         Margin="0 0 0 10"/>
+			<ScrollViewer  Height="500">
+				<ListView x:ConnectionId='10'
+					                                           
+					
+					                                                                   >
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Width="500"
+							            Height="150"
+							            Margin="0 15 0 15">
+								<TextBlock Style="{StaticResource TxtBlock}" Text="{Binding Title, Mode=OneWay}"/>
+								<TextBlock Style="{StaticResource TxtBlock}" Text="{Binding Duration, Mode=OneWay}"/>
+								<TextBlock Style="{StaticResource TxtBlock}" Text="{Binding Director, Mode=OneWay}"/>
+								<TextBlock Style="{StaticResource TxtBlock}" Text="{Binding ReleaseYear, Mode=OneWay}"/>
+								<TextBlock Style="{StaticResource TxtBlock}" Text="{Binding Poster, Mode=OneWay}"/>
+							</StackPanel>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</ScrollViewer>
+		</StackPanel>
+		
+		<StackPanel x:ConnectionId='2' x:Name="MovieDataStkPnl"
+					Grid.Column="1"
+					Visibility="Collapsed"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Center"
+					Width="400"
+					Padding="0,0,50,0">
+			
+			<Image x:ConnectionId='3' Height="300" HorizontalAlignment="Center"
+			       Stretch="Uniform" VerticalAlignment="Top" 
+			                                                                        
+			       Width="500" />
+
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Title"/>
+			<TextBox x:ConnectionId='4' Style="{StaticResource TxtBx}"                                                                                 />
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Director"/>
+			<TextBox x:ConnectionId='5' Style="{StaticResource TxtBx}"                                                                                    />
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Release Year"/>
+			<TextBox x:ConnectionId='6' Style="{StaticResource TxtBx}"                                                                                       />
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Duration"/>
+			<TextBox x:ConnectionId='7' Style="{StaticResource TxtBx}"                                                                                   />
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Poster"/>
+			<TextBox x:ConnectionId='8' Style="{StaticResource TxtBx}"                                                                                 />
+
+
+		</StackPanel>
+
+
+
+	</Grid>
+</Page>
+

@@ -2,6 +2,7 @@
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -43,12 +44,12 @@ namespace MovieLibrary
 			});
 
 			var appView = ApplicationView.GetForCurrentView();
-			appView.TitleBar.BackgroundColor = Windows.UI.Colors.Red;
-			appView.TitleBar.InactiveBackgroundColor = Windows.UI.Colors.Red;
-			appView.TitleBar.ButtonBackgroundColor = Windows.UI.Colors.Red;
-			appView.TitleBar.ButtonHoverBackgroundColor = Windows.UI.Colors.Red;
-			appView.TitleBar.ButtonPressedBackgroundColor = Windows.UI.Colors.Red;
-			appView.TitleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.Red;
+			appView.TitleBar.BackgroundColor = Colors.Crimson;
+			appView.TitleBar.InactiveBackgroundColor = Colors.Crimson;
+			appView.TitleBar.ButtonBackgroundColor = Colors.Crimson;
+			appView.TitleBar.ButtonHoverBackgroundColor = Colors.Crimson;
+			appView.TitleBar.ButtonPressedBackgroundColor = Colors.Crimson;
+			appView.TitleBar.ButtonInactiveBackgroundColor = Colors.Crimson;
 
 			Frame rootFrame = Window.Current.Content as Frame;
 

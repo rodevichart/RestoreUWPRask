@@ -17,8 +17,10 @@ namespace MovieLibrary.Views
 		{
 			this.InitializeComponent();
 			MainFrame.Navigate(typeof(Page1));
-		
-				MainFrame.Navigated += OnNavigated;
+			IconsListBox.SelectedIndex = 0;
+			RelativePnlTitle.Text = Share.Text;
+
+			MainFrame.Navigated += OnNavigated;
 
 				// Register a handler for BackRequested events and set the
 				// visibility of the Back button
@@ -59,17 +61,17 @@ namespace MovieLibrary.Views
 				if (MenuButton1.IsSelected)
 				{
 					MainFrame.Navigate(typeof(Page1));
-					RelativePanTitle.Text = Share.Text;
+					RelativePnlTitle.Text = Share.Text;
 				}
 				else if (MenuButton2.IsSelected)
 				{
 					MainFrame.Navigate(typeof(Page2));
-					RelativePanTitle.Text = Movie.Text;
+					RelativePnlTitle.Text = Movie.Text;
 				}
 				else if (MenuButton3.IsSelected)
 				{
 					MainFrame.Navigate(typeof(Page3));
-					RelativePanTitle.Text = Cortana.Text;
+					RelativePnlTitle.Text = Cortana.Text;
 				}
 				BottomIconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
 			}
@@ -81,12 +83,12 @@ namespace MovieLibrary.Views
 				if (SettingsBtn.IsSelected)
 				{
 					MainFrame.Navigate(typeof(Page3));
-					RelativePanTitle.Text = Settings.Text;
+					RelativePnlTitle.Text = Settings.Text;
 				}
 				else if (SignInBtn.IsSelected)
 				{
 					MainFrame.Navigate(typeof(Page3));
-					RelativePanTitle.Text = SignIn.Text;
+					RelativePnlTitle.Text = SignIn.Text;
 				}
 				IconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
 			}

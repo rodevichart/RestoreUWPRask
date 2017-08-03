@@ -11,6 +11,8 @@
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="/Styles/MainPageStyle.xaml" />
+				<ResourceDictionary Source="/Styles/AllFramesBackGround.xaml" />
+				<ResourceDictionary Source="/Styles/MovieDetailsStyle.xaml" />
 				<ResourceDictionary>
 					<routingConfigurations:ViewModelLocator x:Key="ViewModelLocator"  />
 				</ResourceDictionary>

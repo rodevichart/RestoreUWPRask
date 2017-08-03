@@ -6,44 +6,58 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-	
-		
+
+
 	<Grid x:Name="RootGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+		<!--<Image Source="/Assets/bg_MyPrime_Ziggo.jpg"/>-->
 		<Grid.RowDefinitions>
-		<RowDefinition Height="Auto" />
-		<RowDefinition Height="*" />
-	</Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
 		<RelativePanel x:Name="RelativePan" BorderBrush="Gray" BorderThickness="0,0,0,1">
+			<RelativePanel.Background>
+				<ImageBrush ImageSource="/Assets/bg_MyPrime_Ziggo.jpg"/>
+			</RelativePanel.Background>
 			<Button x:Name="HamburgerButton" Style="{StaticResource NavBtn}" Content="&#xE700;" Click="HamburgerButton_OnClick"/>
 
-			<TextBlock x:Name="RelativePanTitle" Foreground="Black"
-					   RelativePanel.RightOf="HamburgerButton" 
-					   FontSize="30"
-					   VerticalAlignment="Center"/>
+			<TextBlock x:Name="RelativePnlTitle" 
+				           Foreground="#b3b3b3"
+				           RelativePanel.RightOf="HamburgerButton" 
+				           FontSize="38"
+				           FontFamily="Interstate Regular"
+				           VerticalAlignment="Center"
+						   />
+
+
 		</RelativePanel>
 
 		<SplitView Grid.Row="1" x:Name="SplitView" DisplayMode="CompactInline" IsPaneOpen="False"
              CompactPaneLength="45" OpenPaneLength="200">
 			<SplitView.Pane>
 				<Grid>
-				<ListBox SelectionMode="Single" 
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="29*"/>
+						<ColumnDefinition Width="172*"/>
+					</Grid.ColumnDefinitions>
+					<ListBox SelectionMode="Single" 
                          Name="IconsListBox" 
                          SelectionChanged="IconsListBox_SelectionChanged"
-						 Background="Red">
-					<ListBoxItem Name="MenuButton1">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE825;"/>
+						 Background="Crimson" Grid.ColumnSpan="2">
+						<ListBoxItem Name="MenuButton1">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE825;"/>
 								<TextBlock x:Name="Share" Text="Movie List" Style="{StaticResource NavTxt}"/>
-						</StackPanel>
-					</ListBoxItem>
+							</StackPanel>
+						</ListBoxItem>
 
-					<ListBoxItem Name="MenuButton2">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE10F;" />
+						<ListBoxItem Name="MenuButton2">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE10F;" />
 								<TextBlock x:Name="Movie" Text="Search by Director" Style="{StaticResource NavTxt}"/>
-						</StackPanel>
-					</ListBoxItem>
+							</StackPanel>
+						</ListBoxItem>
 
 						<ListBoxItem Name="MenuButton3">
 							<StackPanel Orientation="Horizontal">
@@ -51,15 +65,15 @@
 								<TextBlock x:Name="Cortana" Text="Cortana" Style="{StaticResource NavTxt}" />
 							</StackPanel>
 						</ListBoxItem>
-					
+
 					</ListBox>
-					<StackPanel VerticalAlignment="Bottom">
+					<StackPanel VerticalAlignment="Bottom" Grid.ColumnSpan="2">
 						<!--<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE15E;" Margin="12"/>
 						<TextBlock Style="{StaticResource NavTextBut}"  Text="&#xE192;" Margin="12"/>-->
 						<ListBox SelectionMode="Single" 
                          Name="BottomIconsListBox" 						
                          SelectionChanged="IconsListBox_SelectionChanged"
-						 Background="Red">
+						 Background="Crimson">
 							<ListBoxItem Name="SettingsBtn">
 								<StackPanel Orientation="Horizontal">
 									<TextBlock Style="{StaticResource NavTextBut}" Text="&#xE15E;"/>
@@ -78,9 +92,9 @@
 				</Grid>
 			</SplitView.Pane>
 			<SplitView.Content>
-				<Frame Name="MainFrame" />
+				<Frame Name="MainFrame"/>
 			</SplitView.Content>
 		</SplitView>
-		
+
 	</Grid>
 </Page>

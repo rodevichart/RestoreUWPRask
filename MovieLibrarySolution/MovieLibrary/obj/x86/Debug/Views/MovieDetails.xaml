@@ -6,30 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-	<Page.Resources>
-		<Style TargetType="TextBlock" x:Key="TxtBlock">
-			<Setter Property="FontSize" Value="30"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="FontWeight" Value="Medium"/>
-			<Setter Property="FontFamily" Value="Tahoma"/>
-			<Setter Property="Margin" Value="25,0,0,0"/>
-		</Style>
-
-		<Style TargetType="TextBox" x:Key="TxtBx">
-			<Setter Property="FontSize" Value="30"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="FontWeight" Value="Medium"/>
-			<Setter Property="FontFamily" Value="Tahoma"/>
-			<Setter Property="Margin" Value="25,0,0,0"/>
-		</Style>
-	</Page.Resources>
-	
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		
+	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 
+		<Grid.Background>
+			<ImageBrush ImageSource="/Assets/bg_MyPrime_Ziggo.jpg"/>
+		</Grid.Background>
 		<Image Grid.Column="0" Source="/Assets/placeholder-840x630.png"
 		       Height="900" Width="500"
 		       Stretch="Uniform" />
@@ -39,17 +25,18 @@
 		       Stretch="Uniform" />
 		
 		<StackPanel Grid.Column="1" Width="350"
-		            Height="400"
+		            Height="500"
 		            Margin="0 15 0 15">
-			<TextBlock Text="Title"/>
-			<TextBlock x:ConnectionId='3' TextWrapping="Wrap" Style="{StaticResource TxtBlock}"                                                 />
-			<TextBlock Text="Duration"/>
+
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Title"/>
+			<TextBlock x:ConnectionId='3' Style="{StaticResource TxtBlock}" TextWrapping="Wrap"                                                 />
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Duration"/>
 			<TextBlock x:ConnectionId='4' Style="{StaticResource TxtBlock}"                                                    />
-			<TextBlock Text="Director"/>
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Director"/>
 			<TextBlock x:ConnectionId='5' Style="{StaticResource TxtBlock}"                                                    />
-			<TextBlock Text="Release Year"/>
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Release Year"/>
 			<TextBlock x:ConnectionId='6' Style="{StaticResource TxtBlock}"                                                       />
-			<TextBlock Text=" Poster Url"/>
+			<TextBlock Style="{StaticResource TxtBlockTtl}" Text=" Poster Url"/>
 			<TextBox x:ConnectionId='7' TextWrapping="NoWrap" Style="{StaticResource TxtBx}"                                                  />
 		</StackPanel>
 		

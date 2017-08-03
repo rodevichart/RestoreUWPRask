@@ -418,6 +418,9 @@
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Win2D.uwp\1.18.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\bg_MyPrime_Ziggo.jpg">
+      <PackagePath>Assets\bg_MyPrime_Ziggo.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\Assets\person-placeholder.jpg">
       <PackagePath>Assets\person-placeholder.jpg</PackagePath>
     </AppxPackagedFile>

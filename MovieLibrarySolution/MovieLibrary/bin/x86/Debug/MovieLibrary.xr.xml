@@ -19,29 +19,11 @@
       <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="MovieLibrary.RoutingConfigurations.ViewModelLocator" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Style" />
-      <RootProperty Name="Content" />
-      <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Control">
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="FontWeight" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Margin" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="FontFamily" />
       <RootProperty Name="FontSize" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="FontWeight" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Style" />
       <RootProperty Name="Text" />
       <RootProperty Name="VerticalAlignment" />
@@ -50,24 +32,57 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Padding" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Orientation" />
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Style" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootEvent Name="KeyUp" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="BorderThickness" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
+    <RootType FullName="MovieLibrary.MovieDetailsStyle" />
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="ImageSource" />
+    </RootType>
+    <RootType FullName="MovieLibrary.AllFramesBackGround" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Style" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="Margin" />
+    </RootType>
     <RootType FullName="MovieLibrary.MainPageStyle" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
-      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -76,6 +91,8 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
@@ -86,6 +103,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Children" />
       <RootProperty Name="Padding" />
       <RootMethod Name="GetRightOf" />
@@ -111,6 +129,9 @@
       <RootProperty Name="Pane" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
       <RootProperty Name="Name" />
       <RootProperty Name="SelectionMode" />
@@ -133,6 +154,7 @@
       <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="Height" />
     </RootType>
@@ -141,9 +163,11 @@
       <RootProperty Name="ItemHeight" />
       <RootProperty Name="DesiredWidth" />
       <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemContainerStyle" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="ItemClick" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.GridViewItem" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -157,28 +181,16 @@
       <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="MovieLibrary.Views.Page1" />
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Header" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="PlaceholderText" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Style" />
-      <RootEvent Name="KeyUp" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="FallbackValue" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedIndex" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
-      <RootProperty Name="Mode" />
-      <RootProperty Name="FallbackValue" />
-    </RootType>
     <RootType FullName="MovieLibrary.Views.Page2" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
-      <RootProperty Name="Width" />
-    </RootType>
     <RootType FullName="MovieLibrary.Views.Page3" />
   </Roots.RootTypes>
 </Roots>

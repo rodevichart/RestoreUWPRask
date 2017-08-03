@@ -156,47 +156,51 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[19];
+            _typeNameTable = new string[21];
             _typeNameTable[0] = "MovieLibrary.RoutingConfigurations.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "MovieLibrary.ViewModels.FilmCollectionViewModel";
             _typeNameTable[3] = "MovieLibrary.Model.PropetyChangeBase";
-            _typeNameTable[4] = "MovieLibrary.MainPageStyle";
+            _typeNameTable[4] = "MovieLibrary.MovieDetailsStyle";
             _typeNameTable[5] = "Windows.UI.Xaml.ResourceDictionary";
-            _typeNameTable[6] = "MovieLibrary.Views.MainPage";
-            _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[8] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[9] = "Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView";
-            _typeNameTable[10] = "Windows.UI.Xaml.Controls.GridView";
-            _typeNameTable[11] = "Windows.UI.Xaml.Controls.ItemsControl";
-            _typeNameTable[12] = "Double";
-            _typeNameTable[13] = "Boolean";
-            _typeNameTable[14] = "System.Windows.Input.ICommand";
-            _typeNameTable[15] = "Windows.UI.Xaml.Controls.ItemsPanelTemplate";
-            _typeNameTable[16] = "MovieLibrary.Views.Page1";
-            _typeNameTable[17] = "MovieLibrary.Views.Page2";
-            _typeNameTable[18] = "MovieLibrary.Views.Page3";
+            _typeNameTable[6] = "MovieLibrary.AllFramesBackGround";
+            _typeNameTable[7] = "MovieLibrary.MainPageStyle";
+            _typeNameTable[8] = "MovieLibrary.Views.MainPage";
+            _typeNameTable[9] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[10] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[11] = "Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView";
+            _typeNameTable[12] = "Windows.UI.Xaml.Controls.GridView";
+            _typeNameTable[13] = "Windows.UI.Xaml.Controls.ItemsControl";
+            _typeNameTable[14] = "Double";
+            _typeNameTable[15] = "Boolean";
+            _typeNameTable[16] = "System.Windows.Input.ICommand";
+            _typeNameTable[17] = "Windows.UI.Xaml.Controls.ItemsPanelTemplate";
+            _typeNameTable[18] = "MovieLibrary.Views.Page1";
+            _typeNameTable[19] = "MovieLibrary.Views.Page2";
+            _typeNameTable[20] = "MovieLibrary.Views.Page3";
 
-            _typeTable = new global::System.Type[19];
+            _typeTable = new global::System.Type[21];
             _typeTable[0] = typeof(global::MovieLibrary.RoutingConfigurations.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::MovieLibrary.ViewModels.FilmCollectionViewModel);
             _typeTable[3] = typeof(global::MovieLibrary.Model.PropetyChangeBase);
-            _typeTable[4] = typeof(global::MovieLibrary.MainPageStyle);
+            _typeTable[4] = typeof(global::MovieLibrary.MovieDetailsStyle);
             _typeTable[5] = typeof(global::Windows.UI.Xaml.ResourceDictionary);
-            _typeTable[6] = typeof(global::MovieLibrary.Views.MainPage);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[9] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView);
-            _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.GridView);
-            _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.ItemsControl);
-            _typeTable[12] = typeof(global::System.Double);
-            _typeTable[13] = typeof(global::System.Boolean);
-            _typeTable[14] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.ItemsPanelTemplate);
-            _typeTable[16] = typeof(global::MovieLibrary.Views.Page1);
-            _typeTable[17] = typeof(global::MovieLibrary.Views.Page2);
-            _typeTable[18] = typeof(global::MovieLibrary.Views.Page3);
+            _typeTable[6] = typeof(global::MovieLibrary.AllFramesBackGround);
+            _typeTable[7] = typeof(global::MovieLibrary.MainPageStyle);
+            _typeTable[8] = typeof(global::MovieLibrary.Views.MainPage);
+            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[11] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.GridView);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.ItemsControl);
+            _typeTable[14] = typeof(global::System.Double);
+            _typeTable[15] = typeof(global::System.Boolean);
+            _typeTable[16] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.ItemsPanelTemplate);
+            _typeTable[18] = typeof(global::MovieLibrary.Views.Page1);
+            _typeTable[19] = typeof(global::MovieLibrary.Views.Page2);
+            _typeTable[20] = typeof(global::MovieLibrary.Views.Page3);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -233,13 +237,29 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
 
         private object Activate_0_ViewModelLocator() { return new global::MovieLibrary.RoutingConfigurations.ViewModelLocator(); }
         private object Activate_3_PropetyChangeBase() { return new global::MovieLibrary.Model.PropetyChangeBase(); }
-        private object Activate_4_MainPageStyle() { return new global::MovieLibrary.MainPageStyle(); }
-        private object Activate_6_MainPage() { return new global::MovieLibrary.Views.MainPage(); }
-        private object Activate_9_AdaptiveGridView() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView(); }
-        private object Activate_16_Page1() { return new global::MovieLibrary.Views.Page1(); }
-        private object Activate_17_Page2() { return new global::MovieLibrary.Views.Page2(); }
-        private object Activate_18_Page3() { return new global::MovieLibrary.Views.Page3(); }
-        private void MapAdd_4_MainPageStyle(object instance, object key, object item)
+        private object Activate_4_MovieDetailsStyle() { return new global::MovieLibrary.MovieDetailsStyle(); }
+        private object Activate_6_AllFramesBackGround() { return new global::MovieLibrary.AllFramesBackGround(); }
+        private object Activate_7_MainPageStyle() { return new global::MovieLibrary.MainPageStyle(); }
+        private object Activate_8_MainPage() { return new global::MovieLibrary.Views.MainPage(); }
+        private object Activate_11_AdaptiveGridView() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView(); }
+        private object Activate_18_Page1() { return new global::MovieLibrary.Views.Page1(); }
+        private object Activate_19_Page2() { return new global::MovieLibrary.Views.Page2(); }
+        private object Activate_20_Page3() { return new global::MovieLibrary.Views.Page3(); }
+        private void MapAdd_4_MovieDetailsStyle(object instance, object key, object item)
+        {
+            var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
+            var newKey = (global::System.Object)key;
+            var newItem = (global::System.Object)item;
+            collection.Add(newKey, newItem);
+        }
+        private void MapAdd_6_AllFramesBackGround(object instance, object key, object item)
+        {
+            var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
+            var newKey = (global::System.Object)key;
+            var newItem = (global::System.Object)item;
+            collection.Add(newKey, newItem);
+        }
+        private void MapAdd_7_MainPageStyle(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
             var newKey = (global::System.Object)key;
@@ -283,10 +303,10 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  MovieLibrary.MainPageStyle
+            case 4:   //  MovieLibrary.MovieDetailsStyle
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.ResourceDictionary"));
-                userType.Activator = Activate_4_MainPageStyle;
-                userType.DictionaryAdd = MapAdd_4_MainPageStyle;
+                userType.Activator = Activate_4_MovieDetailsStyle;
+                userType.DictionaryAdd = MapAdd_4_MovieDetailsStyle;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -295,24 +315,40 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  MovieLibrary.Views.MainPage
-                userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_MainPage;
+            case 6:   //  MovieLibrary.AllFramesBackGround
+                userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.ResourceDictionary"));
+                userType.Activator = Activate_6_AllFramesBackGround;
+                userType.DictionaryAdd = MapAdd_6_AllFramesBackGround;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Windows.UI.Xaml.Controls.Page
+            case 7:   //  MovieLibrary.MainPageStyle
+                userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.ResourceDictionary"));
+                userType.Activator = Activate_7_MainPageStyle;
+                userType.DictionaryAdd = MapAdd_7_MainPageStyle;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  MovieLibrary.Views.MainPage
+                userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  Windows.UI.Xaml.Controls.UserControl
+            case 10:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView
+            case 11:   //  Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.GridView"));
-                userType.Activator = Activate_9_AdaptiveGridView;
+                userType.Activator = Activate_11_AdaptiveGridView;
                 userType.AddMemberName("ItemHeight");
                 userType.AddMemberName("DesiredWidth");
                 userType.AddMemberName("StretchContentForSingleRow");
@@ -322,51 +358,51 @@ namespace MovieLibrary.MovieLibrary_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 10:   //  Windows.UI.Xaml.Controls.GridView
+            case 12:   //  Windows.UI.Xaml.Controls.GridView
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  Windows.UI.Xaml.Controls.ItemsControl
+            case 13:   //  Windows.UI.Xaml.Controls.ItemsControl
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  Double
+            case 14:   //  Double
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  Boolean
+            case 15:   //  Boolean
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  System.Windows.Input.ICommand
+            case 16:   //  System.Windows.Input.ICommand
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Windows.UI.Xaml.Controls.ItemsPanelTemplate
+            case 17:   //  Windows.UI.Xaml.Controls.ItemsPanelTemplate
                 xamlType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  MovieLibrary.Views.Page1
+            case 18:   //  MovieLibrary.Views.Page1
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_Page1;
+                userType.Activator = Activate_18_Page1;
                 userType.AddMemberName("FilmCollection");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  MovieLibrary.Views.Page2
+            case 19:   //  MovieLibrary.Views.Page2
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_Page2;
+                userType.Activator = Activate_19_Page2;
                 userType.AddMemberName("FilmCollection");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  MovieLibrary.Views.Page3
+            case 20:   //  MovieLibrary.Views.Page3
                 userType = new global::MovieLibrary.MovieLibrary_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_Page3;
+                userType.Activator = Activate_20_Page3;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
