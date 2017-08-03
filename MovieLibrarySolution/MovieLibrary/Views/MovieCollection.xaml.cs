@@ -16,12 +16,12 @@ namespace MovieLibrary.Views
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class Page1
+	public sealed partial class MovieCollection
 	{
 		public FilmCollectionViewModel FilmCollection { get; set; }
 		
 
-		public Page1()
+		public MovieCollection()
 		{
 			DataContextChanged += (s, e) =>
 			{
@@ -39,18 +39,14 @@ namespace MovieLibrary.Views
 			await FilmCollection.GetFilmsByNDirectorAsync();
 		}
 
-		//private async void DirectorName_OnKeyUp(object sender, KeyRoutedEventArgs e)
-		//{
-		//	if (e.Key == VirtualKey.Enter)
-		//	{
-		//		await FilmCollection.GetFilmsByNDirectorAsync();
-		//	}
-		//}
+		
 
 		private void ListViewBase_OnItemClick(object sender, ItemClickEventArgs e)
 		{
 
-			Frame.Navigate(typeof(Page3), e.ClickedItem);
+			//Frame.Navigate(typeof(MovieDetails), e.ClickedItem);
+			FilmCollection.NavigationService.GoToMovieDetailsPage(e.ClickedItem);
+			//FilmCollection.NavigationService.Navigate(typeof(MovieDetails));
 		}
 
 

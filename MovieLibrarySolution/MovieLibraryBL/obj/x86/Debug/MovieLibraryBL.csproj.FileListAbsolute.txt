@@ -30,3 +30,4 @@ D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\pri.res
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\qualifiers.txt
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\qualifiers.txt.intermediate
 D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\obj\x86\Debug\MovieLibraryBL.csprojResolveAssemblyReference.cache

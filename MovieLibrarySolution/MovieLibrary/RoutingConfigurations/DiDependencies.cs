@@ -18,6 +18,8 @@ namespace MovieLibrary.RoutingConfigurations
 			UnityContainer.RegisterType<IFilmService, FilmService>();
 			UnityContainer.RegisterType<IMoviesApiService, MoviesApiService>();
 			UnityContainer.RegisterType<IHttpService, HttpService>();
+			UnityContainer.RegisterType<IAppNavigationService, AppNavigationService>();
+			UnityContainer.RegisterType<INavigationService, NavigationService>();
 			UnityContainer.RegisterType<FilmCollectionViewModel>();
 			UnityContainer.RegisterType<FilmViewModel>();
 

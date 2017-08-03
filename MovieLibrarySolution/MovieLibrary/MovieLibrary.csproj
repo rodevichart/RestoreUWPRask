@@ -92,14 +92,19 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ApiServices\AppNavigationService.cs" />
+    <Compile Include="ApiServices\IAppNavigationService.cs" />
     <Compile Include="ApiServices\MoviesApiService.cs" />
+    <Compile Include="ApiServices\NavigationService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\IMoviesApiService.cs" />
+    <Compile Include="Core\INavigationService.cs" />
     <Compile Include="RoutingConfigurations\DiDependencies.cs" />
     <Compile Include="RoutingConfigurations\MappingProfile.cs" />
     <Compile Include="RoutingConfigurations\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

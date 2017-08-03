@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using MovieLibrary.ApiServices;
 using MovieLibrary.Model;
 using MovieLibrary.Core;
 
@@ -14,6 +15,7 @@ namespace MovieLibrary.ViewModels
 			private int _selectedIndex;
 			
 			public IMoviesApiService MovieApiService { get; set; }
+			public IAppNavigationService NavigationService { get; set; }
 
 			public ObservableCollection<FilmViewModel> Films
 			{
@@ -40,13 +42,15 @@ namespace MovieLibrary.ViewModels
 		}
 
 
-		public FilmCollectionViewModel(IMoviesApiService filmService)
-			{
+		public FilmCollectionViewModel(IMoviesApiService filmService, IAppNavigationService navigationService)
+		{
+				NavigationService = navigationService;
 				MovieApiService = filmService;
 				_filmCollection = new FilmCollection();
 				_selectedIndex = -1;
-				
-			}
+
+
+	    }
 
 			
 

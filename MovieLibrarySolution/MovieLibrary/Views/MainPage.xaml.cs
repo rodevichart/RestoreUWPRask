@@ -2,6 +2,8 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using MovieLibrary.ViewModels;
+using MovieLibrary.Views;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -12,11 +14,15 @@ namespace MovieLibrary.Views
 	/// </summary>
 	public sealed partial class MainPage
 	{
+		public MainPageViewModel MainPageViewModel { get; set; }
 
 		public MainPage()
 		{
 			this.InitializeComponent();
-			MainFrame.Navigate(typeof(Page1));
+			MainPageViewModel = DataContext as MainPageViewModel;
+
+			//FilmCollection.NavigationService.Navigate(typeof(MovieCollection));
+			MainFrame.Navigate(typeof(MovieCollection));
 			IconsListBox.SelectedIndex = 0;
 			RelativePnlTitle.Text = Share.Text;
 
@@ -35,7 +41,7 @@ namespace MovieLibrary.Views
 
 		private void OnBackRequested(object sender, BackRequestedEventArgs e)
 		{
-
+	
 			if (MainFrame.CanGoBack)
 			{
 				e.Handled = true;
@@ -60,17 +66,18 @@ namespace MovieLibrary.Views
 
 				if (MenuButton1.IsSelected)
 				{
-					MainFrame.Navigate(typeof(Page1));
+					MainPageViewModel.NavigationService.GoToSearchMovieByDirectorPage();
+					//MainFrame.Navigate(typeof(MovieCollection));
 					RelativePnlTitle.Text = Share.Text;
 				}
 				else if (MenuButton2.IsSelected)
 				{
-					MainFrame.Navigate(typeof(Page2));
+					MainFrame.Navigate(typeof(SearchMovieByDirector));
 					RelativePnlTitle.Text = Movie.Text;
 				}
 				else if (MenuButton3.IsSelected)
 				{
-					MainFrame.Navigate(typeof(Page3));
+					MainFrame.Navigate(typeof(MovieDetails));
 					RelativePnlTitle.Text = Cortana.Text;
 				}
 				BottomIconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
@@ -82,12 +89,12 @@ namespace MovieLibrary.Views
 
 				if (SettingsBtn.IsSelected)
 				{
-					MainFrame.Navigate(typeof(Page3));
+					MainFrame.Navigate(typeof(MovieDetails));
 					RelativePnlTitle.Text = Settings.Text;
 				}
 				else if (SignInBtn.IsSelected)
 				{
-					MainFrame.Navigate(typeof(Page3));
+					MainFrame.Navigate(typeof(MovieDetails));
 					RelativePnlTitle.Text = SignIn.Text;
 				}
 				IconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
