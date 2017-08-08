@@ -94,7 +94,9 @@
   <ItemGroup>
     <Compile Include="ApiServices\AppNavigationService.cs" />
     <Compile Include="ApiServices\IAppNavigationService.cs" />
+    <Compile Include="Core\IMovieSqlHelper.cs" />
     <Compile Include="ApiServices\MoviesApiService.cs" />
+    <Compile Include="ApiServices\MovieSqlHelper.cs" />
     <Compile Include="ApiServices\NavigationService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -203,6 +205,7 @@
       <Name>MovieLibraryBL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

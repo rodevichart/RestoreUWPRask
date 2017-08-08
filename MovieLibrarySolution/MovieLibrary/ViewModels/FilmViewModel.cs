@@ -1,4 +1,5 @@
-﻿using MovieLibrary.Model;
+﻿using MovieLibrary.ApiServices;
+using MovieLibrary.Model;
 
 namespace MovieLibrary.ViewModels
 {
@@ -136,11 +137,17 @@ namespace MovieLibrary.ViewModels
 
 	public class FilmViewModel : PropetyChangeBaseGeneric<Film>
 	{
-
+		public IAppNavigationService NavigationService { get; set; }
 
 		public FilmViewModel(Film film = null)
 			:base(film)
-		{	
+		{
+		}
+
+		public FilmViewModel(IAppNavigationService navigationService, Film film = null)
+			:base(film)
+		{
+			NavigationService = navigationService;
 		}
 
 		

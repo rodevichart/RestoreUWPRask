@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="MovieLibrary.Views.MovieCollection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieLibrary.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+	
+
+    DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=FilmCollectionViewModel}"
+    mc:Ignorable="d">
+
+	<Grid x:ConnectionId='1'  x:Name="MainGrid" 
+		Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<ScrollViewer>
+			<ScrollViewer.Background>
+				<ImageBrush ImageSource="/Assets/bg_MyPrime_Ziggo.jpg"/>
+			</ScrollViewer.Background>
+			<controls:AdaptiveGridView x:ConnectionId='2' ItemsSource="{Binding Films}"
+			                           x:Name="VideoListView"
+			                           ItemHeight="320" DesiredWidth="200"
+			                                                               
+			                           IsItemClickEnabled="True">
+				
+				<controls:AdaptiveGridView.ItemContainerStyle>
+					<Style TargetType="GridViewItem">
+						<!--<Setter Property="BorderBrush" Value="Red"/>-->
+						<Setter Property="BorderThickness" Value="1"/>
+						<Setter Property="Background" Value="Transparent"/>
+					</Style>
+				</controls:AdaptiveGridView.ItemContainerStyle>
+
+				<controls:AdaptiveGridView.ItemTemplate>
+					<DataTemplate>
+						<RelativePanel Padding="10">
+							<Image Source="/Assets/placeholder-840x630.png"
+							       Stretch="Uniform" 
+							       RelativePanel.AlignTopWithPanel="True"	
+							       RelativePanel.AlignLeftWithPanel="True"
+							       RelativePanel.AlignRightWithPanel="True"
+							       Margin="15"
+							       RelativePanel.Above="name"/>
+
+							<Image x:Name="PosterImage"
+							       Source="{Binding Poster}"
+							       Stretch="Uniform" 
+							       RelativePanel.AlignTopWithPanel="True"
+							       RelativePanel.AlignLeftWithPanel="True"
+							       RelativePanel.AlignRightWithPanel="True"
+							       Margin="15"
+							       RelativePanel.Above="name"/>
+							<TextBlock x:Name="name" Text="{Binding Title}"
+							           HorizontalAlignment="Left"
+							           Margin="15"
+							           TextWrapping="Wrap"
+							           Padding="0,3"
+							           FontSize="12"
+							           Foreground="White"  FontFamily="Raleway" FontWeight="SemiBold"
+							           RelativePanel.AlignBottomWith="year"/>
+							<TextBlock x:Name="year" Text="{Binding ReleaseYear}"
+							           Margin="1"
+							           HorizontalAlignment="Left"
+							           TextWrapping="Wrap"
+							           Foreground="White" 
+							           FontSize="10"
+							           FontFamily="Raleway" FontWeight="SemiBold"
+							           RelativePanel.AlignBottomWithPanel="True"/>
+						</RelativePanel>
+					</DataTemplate>
+
+				</controls:AdaptiveGridView.ItemTemplate>
+			</controls:AdaptiveGridView>
+		</ScrollViewer>
+	</Grid>
+</Page>
+

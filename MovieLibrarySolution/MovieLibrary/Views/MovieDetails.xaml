@@ -37,7 +37,7 @@
 			<TextBlock Style="{StaticResource TxtBlockTtl}" Text="Release Year"/>
 			<TextBlock Style="{StaticResource TxtBlock}" Text="{x:Bind FilmViewModel.ReleaseYear, Mode=OneWay}"/>
 			<TextBlock Style="{StaticResource TxtBlockTtl}" Text=" Poster Url"/>
-			<TextBox TextWrapping="NoWrap" Style="{StaticResource TxtBx}" Text="{x:Bind FilmViewModel.Poster, Mode=OneWay}"/>
+			<HyperlinkButton Style="{StaticResource HypBtn}"  Content="{x:Bind FilmViewModel.Poster, Mode=OneWay}"/>
 		</StackPanel>
 		
 	</Grid>

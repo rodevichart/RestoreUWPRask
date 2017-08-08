@@ -28,10 +28,7 @@ namespace MovieLibrary.Views
 				FilmCollection = DataContext as FilmCollectionViewModel;
 			};
 
-	
 			this.InitializeComponent();
-
-			
 		}
 
 		protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -43,7 +40,7 @@ namespace MovieLibrary.Views
 
 		private void ListViewBase_OnItemClick(object sender, ItemClickEventArgs e)
 		{
-
+			FilmCollection.NavigationService.Initialize(Frame);
 			//Frame.Navigate(typeof(MovieDetails), e.ClickedItem);
 			FilmCollection.NavigationService.GoToMovieDetailsPage(e.ClickedItem);
 			//FilmCollection.NavigationService.Navigate(typeof(MovieDetails));

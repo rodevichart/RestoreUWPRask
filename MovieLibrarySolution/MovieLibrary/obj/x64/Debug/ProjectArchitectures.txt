@@ -1,0 +1,2 @@
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\MovieLibrary.csproj;x64
+D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\MovieLibraryBL.csproj;x64

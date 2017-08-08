@@ -8,15 +8,25 @@ namespace MovieLibrary.ApiServices
 {
 	public class NavigationService : INavigationService
 	{
+		private Frame _frame;
 
-		protected static Frame MainFrame
+		protected Frame MainFrame
 		{
-			get { return (Window.Current.Content as Frame); }
+			//get { if(_frame == null)
+			//	 _frame = Window.Current.Content as Frame;
+			//	return _frame;
+			//}
+			get { return _frame; }
+			set { _frame = value; }
 
 		}
 
-		public event NavigatingCancelEventHandler Navigating;
-		
+
+		public void Initialize(Frame frame)
+		{
+			 MainFrame = frame;
+		}
+
 		public void Navigate(Type type)
 		{
 			MainFrame.Navigate(type);

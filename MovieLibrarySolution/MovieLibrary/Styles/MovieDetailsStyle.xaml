@@ -29,4 +29,14 @@
 		<Setter Property="Foreground" Value="#FFB0B0B0"/>
 		<Setter Property="FontSize" Value="30"/>
 	</Style>
+
+
+	<Style TargetType="HyperlinkButton" x:Key="HypBtn">
+		<Setter Property="FontSize" Value="30"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="FontWeight" Value="Medium"/>
+		<Setter Property="FontFamily" Value="Tahoma"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="Margin" Value="30,0,0,0"/>
+	</Style>
 </ResourceDictionary>

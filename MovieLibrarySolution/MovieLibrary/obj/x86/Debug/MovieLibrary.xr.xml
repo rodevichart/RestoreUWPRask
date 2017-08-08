@@ -44,7 +44,6 @@
       <RootProperty Name="Text" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="TextWrapping" />
       <RootEvent Name="KeyUp" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
@@ -54,6 +53,10 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Background" />
       <RootProperty Name="BorderThickness" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
+      <RootProperty Name="Style" />
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />

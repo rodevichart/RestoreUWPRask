@@ -1,0 +1,30 @@
+﻿<Application
+    x:Class="MovieLibrary.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MovieLibrary"
+	xmlns:routingConfigurations="using:MovieLibrary.RoutingConfigurations"
+    RequestedTheme="Light">
+
+	<Application.Resources>
+	
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Styles/MainPageStyle.xaml" />
+				<ResourceDictionary Source="/Styles/AllFramesBackGround.xaml" />
+				<ResourceDictionary Source="/Styles/MovieDetailsStyle.xaml" />
+				<ResourceDictionary>
+					<routingConfigurations:ViewModelLocator x:Key="ViewModelLocator"  />
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+
+			<!--  custom resources go here  -->
+
+		</ResourceDictionary>
+		
+		
+	</Application.Resources>
+
+
+</Application>
+

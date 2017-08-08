@@ -1,4 +1,5 @@
-﻿using MovieLibrary.Core;
+﻿using Windows.UI.Xaml.Controls;
+using MovieLibrary.Core;
 using MovieLibrary.Views;
 
 namespace MovieLibrary.ApiServices
@@ -10,6 +11,11 @@ namespace MovieLibrary.ApiServices
 		public AppNavigationService(INavigationService service)
 		{
 			NavigationService = service;
+		}
+
+		public void Initialize(Frame frame)
+		{
+			NavigationService.Initialize(frame);
 		}
 
 		public void GoToMovieDetailsPage()

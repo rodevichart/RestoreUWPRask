@@ -14,15 +14,17 @@ namespace MovieLibrary.Views
 	/// </summary>
 	public sealed partial class MainPage
 	{
-		public MainPageViewModel MainPageViewModel { get; set; }
+		public MainPageViewModel MainPageVM { get; set; }
 
 		public MainPage()
 		{
 			this.InitializeComponent();
-			MainPageViewModel = DataContext as MainPageViewModel;
+			MainPageVM = DataContext as MainPageViewModel;
 
 			//FilmCollection.NavigationService.Navigate(typeof(MovieCollection));
-			MainFrame.Navigate(typeof(MovieCollection));
+			//MainFrame.Navigate(typeof(MovieCollection));
+			MainPageVM.NavigationService.Initialize(MainFrame);
+			MainPageVM.NavigationService.GoToMovieCollectionPage();
 			IconsListBox.SelectedIndex = 0;
 			RelativePnlTitle.Text = Share.Text;
 
@@ -66,18 +68,19 @@ namespace MovieLibrary.Views
 
 				if (MenuButton1.IsSelected)
 				{
-					MainPageViewModel.NavigationService.GoToSearchMovieByDirectorPage();
+					//MainPageViewModel.NavigationService.
+					MainPageVM.NavigationService.GoToMovieCollectionPage();
 					//MainFrame.Navigate(typeof(MovieCollection));
 					RelativePnlTitle.Text = Share.Text;
 				}
 				else if (MenuButton2.IsSelected)
 				{
-					MainFrame.Navigate(typeof(SearchMovieByDirector));
+					MainPageVM.NavigationService.GoToSearchMovieByDirectorPage();
 					RelativePnlTitle.Text = Movie.Text;
 				}
 				else if (MenuButton3.IsSelected)
 				{
-					MainFrame.Navigate(typeof(MovieDetails));
+					MainPageVM.NavigationService.GoToMovieDetailsPage();
 					RelativePnlTitle.Text = Cortana.Text;
 				}
 				BottomIconsListBox.SelectionChanged += IconsListBox_SelectionChanged;
@@ -89,12 +92,12 @@ namespace MovieLibrary.Views
 
 				if (SettingsBtn.IsSelected)
 				{
-					MainFrame.Navigate(typeof(MovieDetails));
+					MainPageVM.NavigationService.GoToMovieDetailsPage();
 					RelativePnlTitle.Text = Settings.Text;
 				}
 				else if (SignInBtn.IsSelected)
 				{
-					MainFrame.Navigate(typeof(MovieDetails));
+					MainPageVM.NavigationService.GoToMovieDetailsPage();
 					RelativePnlTitle.Text = SignIn.Text;
 				}
 				IconsListBox.SelectionChanged += IconsListBox_SelectionChanged;

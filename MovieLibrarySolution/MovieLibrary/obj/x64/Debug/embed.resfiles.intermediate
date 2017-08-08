@@ -1,0 +1,8 @@
+App.xbf
+Styles\AllFramesBackGround.xbf
+Styles\MainPageStyle.xbf
+Styles\MovieDetailsStyle.xbf
+Views\MainPage.xbf
+Views\MovieCollection.xbf
+Views\MovieDetails.xbf
+Views\SearchMovieByDirector.xbf

@@ -1,11 +1,12 @@
 ﻿using System;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 namespace MovieLibrary.Core
 {
 	public interface INavigationService
 	{
-		event NavigatingCancelEventHandler Navigating;
+		void Initialize(Frame frame);
 		void Navigate(Type type);
 		void Navigate(Type type, object parameter);
 		void Navigate(string type);
