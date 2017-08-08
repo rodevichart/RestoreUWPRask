@@ -15,9 +15,6 @@ namespace MovieLibraryBL.Services
 {
 	public class MovieSqlService : IMovieSqlService
 	{
-		private const string DbName = "sqlCache.db";
-		private const string TableName = "Movies";
-
 		private IConfigService ConfigService { get; }
 		private static byte CachePeriod { get; set; }
 
@@ -36,22 +33,18 @@ namespace MovieLibraryBL.Services
 			CachePeriod = appConfig.CacheTimeOutDuration;
 
 
-			using (var db = new SqliteConnection($"Filename={DbName}"))
+			using (var db = new SqliteConnection(MovieSqlConsts.SqliteConnection))
 				{
 
 					db.Open();
 					if (!TableExists(db))
 					{
-					var tableCommand = $"CREATE TABLE {TableName} (Id INTEGER PRIMARY KEY AUTOINCREMENT," +
-					                   " Title TEXT NOT NULL, ReleaseYear TEXT NULL," +
-					                   " RunTime TEXT NULL, Poster TEXT NULL," +
-					                   " EditTime DATETIME," +
-					                   " Director TEXT NULL)";
-						var createTable = new SqliteCommand(tableCommand, db);
+
+						var createTable = new SqliteCommand(MovieSqlConsts.CreateTableScript, db);
 						try
 						{
 							createTable.ExecuteReader();
-							ConfigService.WriteCacheTimeoutSerializeAsync(new AppConfigurations { CacheTimeOutDuration = CachePeriod, NextCheck = DateTime.Now });
+							ConfigService.WriteCacheTimeoutSerializeAsync(new AppConfigurations { CacheTimeOutDuration = CachePeriod, NextCheck = DateTime.Now.AddDays(CachePeriod) });
 						}
 						catch (SqliteException e)
 						{
@@ -70,15 +63,18 @@ namespace MovieLibraryBL.Services
 			{
 				cmd.CommandType = CommandType.Text;
 				cmd.Connection = connection;
-				cmd.CommandText = "SELECT * FROM sqlite_master WHERE type = 'table' AND name = @name";
-				cmd.Parameters.AddWithValue("@name", TableName);
+				cmd.CommandText = MovieSqlConsts.CheckIfExistTableScript;
+				cmd.Parameters.AddWithValue(MovieSqlConsts.CheckIfExistTableScriptParam, MovieSqlConsts.TableName);
 
-				using (SqliteDataReader sqlDataReader = cmd.ExecuteReader())
+				using (var sqlDataReader = cmd.ExecuteReader())
 				{
+
 					if (sqlDataReader.Read())
+					{
 						return true;
-					else
-						return false;
+					}
+
+					return false;
 				}
 			}
 		}
@@ -86,7 +82,7 @@ namespace MovieLibraryBL.Services
 
 		public async void AddDataAsync(IList<FilmDto> filmListDto)
 		{
-			using (SqliteConnection db = new SqliteConnection($"Filename={DbName}"))
+			using (var db = new SqliteConnection(MovieSqlConsts.SqliteConnection))
 			{
 				db.Open();
 
@@ -95,15 +91,15 @@ namespace MovieLibraryBL.Services
 					var insertCommand = new SqliteCommand
 					{
 						Connection = db,
-						CommandText = $"INSERT INTO {TableName} VALUES (NULL, @Title, @ReleaseYear, @RunTime, @Poster, @Director, @EditTime);"
+						CommandText = MovieSqlConsts.AddDataScript
 					};
 
-					insertCommand.Parameters.AddWithValue("@Title", movie.Title);
-					insertCommand.Parameters.AddWithValue("@ReleaseYear", movie.ReleaseYear);
-					insertCommand.Parameters.AddWithValue("@RunTime", movie.Duration);
-					insertCommand.Parameters.AddWithValue("@Poster", movie.Poster);
-					insertCommand.Parameters.AddWithValue("@Director", movie.Director);
-					insertCommand.Parameters.AddWithValue("@EditTime", DateTime.Now.Date.AddDays(CachePeriod));
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.AddDataScriptScriptParamTitle, movie.Title);
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.AddDataScriptScriptParamReleaseYear, movie.ReleaseYear);
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.AddDataScriptScriptParamRunTime, movie.Duration);
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.AddDataScriptScriptParamPoster, movie.Poster);
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.AddDataScriptScriptParamDirector, movie.Director);
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.AddDataScriptScriptParamEditTime, DateTime.Now.Date.AddDays(CachePeriod));
 					try
 					{
 						await insertCommand.ExecuteReaderAsync();
@@ -127,14 +123,14 @@ namespace MovieLibraryBL.Services
 			CheckForClearCache();
 
 			var films = new List<FilmDto>();
-			using (var db = new SqliteConnection($"Filename={DbName}"))
+			using (var db = new SqliteConnection(MovieSqlConsts.SqliteConnection))
 
 			{
 						
 
 				db.Open();
 
-				var selectCommand = new SqliteCommand($"SELECT * from {TableName}", db);
+				var selectCommand = new SqliteCommand(MovieSqlConsts.GrabDataScript, db);
 
 				SqliteDataReader query;
 
@@ -171,13 +167,13 @@ namespace MovieLibraryBL.Services
 
 
 			var films = new List<FilmDto>();
-			using (var db = new SqliteConnection($"Filename={DbName}"))
+			using (var db = new SqliteConnection(MovieSqlConsts.SqliteConnection))
 
 			{
 				db.Open();
 
-				var selectCommand = new SqliteCommand($"SELECT * from {TableName} WHERE Director==@Director", db);
-				selectCommand.Parameters.AddWithValue("@Director", director);
+				var selectCommand = new SqliteCommand(MovieSqlConsts.SearchByDirectorScript, db);
+				selectCommand.Parameters.AddWithValue(MovieSqlConsts.SearchByDirectorScriptParam, director);
 				SqliteDataReader query;
 
 				try
@@ -208,18 +204,18 @@ namespace MovieLibraryBL.Services
 
 		private async void ClearCache()
 		{
-			using (SqliteConnection db = new SqliteConnection($"Filename={DbName}"))
+			using (var db = new SqliteConnection(MovieSqlConsts.SqliteConnection))
 			{
 				db.Open();
 
 					var command = new SqliteCommand
 					{
 						Connection = db,
-						CommandText = $"DELETE FROM {TableName} WHERE EditTime>=@EditTime;"
+						CommandText = MovieSqlConsts.ClearCacheScript
 					};
 
 				var appConfig = await GetCachePeriodAsync();
-					command.Parameters.AddWithValue("@EditTime", DateTime.Now.Date.AddDays(appConfig.CacheTimeOutDuration));
+					command.Parameters.AddWithValue(MovieSqlConsts.ClearCacheScriptParam, DateTime.Now.Date.AddDays(appConfig.CacheTimeOutDuration));
 					try
 					{
 						await command.ExecuteReaderAsync();
@@ -232,7 +228,7 @@ namespace MovieLibraryBL.Services
 					finally
 					{
 						command.Dispose();
-						ConfigService.WriteCacheTimeoutSerializeAsync(new AppConfigurations{ CacheTimeOutDuration = CachePeriod, NextCheck = DateTime.Now});
+						ConfigService.WriteCacheTimeoutSerializeAsync(new AppConfigurations{ CacheTimeOutDuration = CachePeriod, NextCheck = DateTime.Now.AddDays(appConfig.CacheTimeOutDuration) });
 					}
 				
 

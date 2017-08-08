@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-08T07:48:53.586</Modified>
+      <Modified>2017-08-08T11:24:29.118</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x64\Debug\MovieLibrary.exe">
       <PackagePath>entrypoint\MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-08T07:48:51.524</Modified>
+      <Modified>2017-08-08T11:24:27.521</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\AutoMapper\6.1.1\lib\netstandard1.3\AutoMapper.dll">
       <PackagePath>AutoMapper.dll</PackagePath>
@@ -569,7 +569,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibraryBL\bin\x64\Debug\MovieLibraryBL.dll">
       <PackagePath>MovieLibraryBL.dll</PackagePath>
-      <Modified>2017-08-08T07:48:49.002</Modified>
+      <Modified>2017-08-08T11:24:25.380</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Artsem_Radzevich\.nuget\packages\Win2D.uwp\1.18.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -696,11 +696,11 @@
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-07T16:25:55.291</Modified>
+      <Modified>2017-08-08T09:15:39.684</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\C# Tasks\RestoreUwp\MovieLibrarySolution\MovieLibrary\bin\x64\Debug\Core\MovieLibrary.exe">
       <PackagePath>MovieLibrary.exe</PackagePath>
-      <Modified>2017-08-08T07:48:53.576</Modified>
+      <Modified>2017-08-08T11:24:29.112</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

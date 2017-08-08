@@ -122,6 +122,7 @@
     <Compile Include="Services\FilmService.cs" />
     <Compile Include="Core\IMovieSqlService.cs" />
     <Compile Include="Core\IConfigService.cs" />
+    <Compile Include="Services\MovieSqlConsts.cs" />
     <Compile Include="Services\MovieSqlService.cs" />
     <EmbeddedResource Include="Properties\MovieLibraryBL.rd.xml" />
   </ItemGroup>
@@ -150,9 +151,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <None Include="Config\AppConfig.json" />
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
