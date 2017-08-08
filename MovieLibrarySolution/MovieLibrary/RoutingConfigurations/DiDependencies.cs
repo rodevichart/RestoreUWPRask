@@ -23,6 +23,7 @@ namespace MovieLibrary.RoutingConfigurations
 			UnityContainer.RegisterType<IConfigService, ConfigService>(new ContainerControlledLifetimeManager());
 			UnityContainer.RegisterType<IAppNavigationService, AppNavigationService>();
 			UnityContainer.RegisterType<INavigationService, NavigationService>();
+			UnityContainer.RegisterType<IMovieToastNotificationService, MovieToastNotificationService>();
 			UnityContainer.RegisterType<FilmCollectionViewModel>();
 			UnityContainer.RegisterType<FilmViewModel>();
 

@@ -1,6 +1,6 @@
 using Windows.UI.Xaml.Controls;
 
-namespace MovieLibrary.ApiServices
+namespace MovieLibrary.Core
 {
 	public interface IAppNavigationService
 	{

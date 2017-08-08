@@ -1,4 +1,5 @@
 ﻿using MovieLibrary.ApiServices;
+using MovieLibrary.Core;
 using MovieLibrary.Model;
 
 namespace MovieLibrary.ViewModels

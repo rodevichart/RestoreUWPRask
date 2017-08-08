@@ -93,7 +93,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ApiServices\AppNavigationService.cs" />
-    <Compile Include="ApiServices\IAppNavigationService.cs" />
+    <Compile Include="Core\IAppNavigationService.cs" />
+    <Compile Include="Core\IMovieToastNotificationService.cs" />
+    <Compile Include="ApiServices\MovieToastNotificationService.cs" />
     <Compile Include="Core\IMovieSqlHelper.cs" />
     <Compile Include="ApiServices\MoviesApiService.cs" />
     <Compile Include="ApiServices\MovieSqlHelper.cs" />

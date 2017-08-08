@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
+using Windows.UI.Notifications;
 using MovieLibrary.ApiServices;
 using MovieLibrary.Model;
 using MovieLibrary.Core;
@@ -77,9 +79,46 @@ namespace MovieLibrary.ViewModels
 				_films.Add(nm);
 
 			}
+			UpdateLiveTile();
 		}
 
-		void Movies_OnNotifyPropertyChanged(Object sender, PropertyChangedEventArgs e)
+		private void UpdateLiveTile()
+		{
+			var tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare150x150Text03);
+			var tileTextAttributes = tileXml.GetElementsByTagName("test");
+
+			try
+			{
+				var film = (_films.ElementAt(0));
+				tileTextAttributes[0].InnerText = film.Title;
+				film = (_films.ElementAt(1));
+				tileTextAttributes[1].InnerText = film.Title;
+
+
+
+				var wideTileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileWide310x150BlockAndText02);
+				var wideTileTextAttributes = tileXml.GetElementsByTagName("test");
+
+				film = (_films.ElementAt(0));
+				wideTileTextAttributes[0].InnerText = film.Title;
+				film = (_films.ElementAt(1));
+				wideTileTextAttributes[1].InnerText = film.Title;
+
+				var node = tileXml.ImportNode(wideTileXml.GetElementsByTagName("binding").Item(0), true);
+				tileXml.GetElementsByTagName("visual").Item(0).AppendChild(node);
+
+				var tileNotification = new TileNotification(tileXml);
+				tileNotification.ExpirationTime = DateTimeOffset.Now.AddDays(3);
+				TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+			}
+			catch (Exception e)
+			{
+			}
+			
+		}
+
+
+		private void Movies_OnNotifyPropertyChanged(Object sender, PropertyChangedEventArgs e)
 			{
 				_filmCollection.Update((FilmViewModel)sender);
 			}
