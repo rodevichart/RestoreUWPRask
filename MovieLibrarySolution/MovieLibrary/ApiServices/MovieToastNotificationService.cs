@@ -15,7 +15,7 @@ namespace MovieLibrary.ApiServices
 			var toasTextElements = toastXml.GetElementsByTagName("text");
 			toasTextElements[0].AppendChild(toastXml.CreateTextNode(filmViewModel.Title));
 			toasTextElements[1].AppendChild(toastXml.CreateTextNode(filmViewModel.Director + " " + filmViewModel.ReleaseYear));
-			var toastImageElement = toastXml.GetElementsByTagName("image");
+				var toastImageElement = toastXml.GetElementsByTagName("image");
 			((Windows.Data.Xml.Dom.XmlElement)toastImageElement[0]).SetAttribute("src", filmViewModel.Poster);
 
 			IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
