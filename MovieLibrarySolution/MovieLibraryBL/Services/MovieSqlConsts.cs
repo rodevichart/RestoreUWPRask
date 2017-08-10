@@ -2,45 +2,80 @@
 {
 	public class MovieSqlConsts
 	{
-		public static readonly string DbName = "sqlCache.db";
-		public static readonly string TableName = "Movies";
+		public static string MovieTableCommand =>
+			"CREATE TABLE IF NOT EXISTS MoviesTable (Movie_Id TEXT PRIMARY KEY," +
+			" Name TEXT NOT NULL, Year TEXT NULL," +
+			" RunTime TEXT NULL," +
+			" Poster TEXT NULL," +
+			" Director TEXT NULL)";
 
 
-		public static readonly string SqliteConnection = $"Filename={DbName}";
+		public static string BuffTableCommand =>
+			"CREATE TABLE IF NOT EXISTS BuffTable (Buff_Id INTEGER PRIMARY KEY AUTOINCREMENT," +
+			" Movie_Id TEXT NOT NULL, Cache_Id TEXT NOT NULL)";
 
 
-		public static readonly string CreateTableScript = $"CREATE TABLE {TableName} (Id INTEGER PRIMARY KEY AUTOINCREMENT," +
-		                                                  " Title TEXT NOT NULL, ReleaseYear TEXT NULL," +
-		                                                  " RunTime TEXT NULL, Poster TEXT NULL," +
-		                                                  " EditTime DATETIME," +
-		                                                  " Director TEXT NULL)";
-
-
-
-		public static readonly string CheckIfExistTableScriptParam = "@name";
-		public static readonly string CheckIfExistTableScript = $"SELECT * FROM sqlite_master WHERE type = 'table' AND name = {CheckIfExistTableScriptParam}";
-
-
-		public static readonly string AddDataScriptScriptParamId = "NULL";
-		public static readonly string AddDataScriptScriptParamTitle = "@Title";
-		public static readonly string AddDataScriptScriptParamReleaseYear = "@ReleaseYear";
-		public static readonly string AddDataScriptScriptParamRunTime = "@RunTime";
-		public static readonly string AddDataScriptScriptParamPoster = "@Poster";
-		public static readonly string AddDataScriptScriptParamDirector = "@Director";
-		public static readonly string AddDataScriptScriptParamEditTime = "@EditTime";
-		public static readonly string AddDataScript = $"INSERT INTO {TableName} VALUES ({AddDataScriptScriptParamId}, {AddDataScriptScriptParamTitle}, {AddDataScriptScriptParamReleaseYear}, {AddDataScriptScriptParamRunTime},"+
-														$" {AddDataScriptScriptParamPoster}, {AddDataScriptScriptParamDirector}, {AddDataScriptScriptParamEditTime});";
-
-
-		public static readonly string ClearCacheScriptParam = "@EditTime";
-		public static readonly string ClearCacheScript = $"DELETE FROM {TableName} WHERE EditTime>={ClearCacheScriptParam};";
-
-
-		public static readonly string GrabDataScript = $"SELECT * from {TableName}";
+		public static string CacheTableCommand =>
+			"CREATE TABLE IF NOT EXISTS CacheTable (Cache_Id TEXT PRIMARY KEY," +
+			" URL TEXT NOT NULL, CreationData INTEGER NOT NULL)";
 
 
 
-		public static readonly string SearchByDirectorScriptParam = "@Director";
-		public static readonly string SearchByDirectorScript = $"SELECT * from {TableName} WHERE Director=={SearchByDirectorScriptParam}";
+		public static string DbFileName => "Filename=sqliteSample.db";
+
+		public static string InsertCommandText =>
+			"INSERT INTO MoviesTable VALUES (@MovieId, @Name, @Year, @RunTime, @Poster, @Director);";
+
+
+
+
+		public static string InsertCacheCommandText => "INSERT INTO CacheTable VALUES (@CacheId, @Url, @CreationData);";
+		public static string InsertBuffCommandText => "INSERT INTO BuffTable VALUES (NULL, @MovieId, @CacheId);";
+
+		public static string SelectByNameCommand => "SELECT Name FROM MoviesTable WHERE Name == @Name";
+
+		public static string SelectByDirectorCommand => "SELECT * FROM MoviesTable WHERE Director == @Director";
+
+		public static string SelectAllCommand => "SELECT * from MoviesTable";
+
+		public static string DeleteByNameCommand => "DELETE from MoviesTable WHERE Name == @Name";
+
+		public static string ParamMovieId => "@MovieId";
+
+		public static string ParamCacheId => "@CacheId";
+
+		public static string ParamUrl => "@Url";
+
+		public static string ParamName => "@Name";
+
+		public static string ParamYear => "@Year";
+
+		public static string ParamRunTime => "@RunTime";
+
+		public static string ParamPoster => "@Poster";
+
+		public static string ParamDirector => "@Director";
+
+		public static string ParamCreationData => "@CreationData";
+
+		public static string SelectAllMoviesCommand => "SELECT * from MoviesTable;";
+
+		public static string SelectAllCacheCommand => "SELECT * from CacheTable;";
+
+		public static string SelectAllMovieIdByCacheId => "SELECT Movie_Id from BuffTable WHERE Cache_Id == @CacheId;";
+
+		public static string DeleteMovieByIdCommand => "DELETE from MoviesTable WHERE Movie_Id == @MovieId;";
+
+		public static string DeleteBuffByIdCommand => "DELETE from BuffTable WHERE Cache_Id == @CacheId;";
+
+		public static string DeleteCacheByIdCommand => "DELETE from CacheTable WHERE Cache_Id == @CacheId";
+
+		public static string SelectCacheIdByUrl => "SELECT Cache_Id from CacheTable WHERE URL == @Url;";
+
+		public static string SelectCachMoviesByUrl => "SELECT Name, Year, RunTime, Poster, Director from MoviesTable " +
+		                                              "Left join CacheTable on BuffTable.Cache_Id = CacheTable.Cache_Id " +
+		                                              "Join BuffTable on MoviesTable.Movie_Id = BuffTable.Movie_Id " +
+		                                              "Where URL == @Url";
+
 	}
 }

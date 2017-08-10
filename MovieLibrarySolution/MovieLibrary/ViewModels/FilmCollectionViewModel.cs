@@ -7,6 +7,7 @@ using Windows.UI.Notifications;
 using MovieLibrary.ApiServices;
 using MovieLibrary.Model;
 using MovieLibrary.Core;
+using MovieLibraryBL.Core;
 
 namespace MovieLibrary.ViewModels
 {
@@ -18,8 +19,9 @@ namespace MovieLibrary.ViewModels
 			
 			public IMoviesApiService MovieApiService { get; set; }
 			public IAppNavigationService NavigationService { get; set; }
+			private IMovieSqlService _movieSqlService;
 
-			public ObservableCollection<FilmViewModel> Films
+		public ObservableCollection<FilmViewModel> Films
 			{
 				get { return _films; }
 				set { SetProperty(ref _films, value); }
@@ -44,10 +46,12 @@ namespace MovieLibrary.ViewModels
 		}
 
 
-		public FilmCollectionViewModel(IMoviesApiService filmService, IAppNavigationService navigationService)
+		public FilmCollectionViewModel(IMoviesApiService filmService, IAppNavigationService navigationService, IMovieSqlService movieSqlService)
 		{
 				NavigationService = navigationService;
-				MovieApiService = filmService;
+			_movieSqlService = movieSqlService;
+			_movieSqlService.InitDataBase();
+			MovieApiService = filmService;
 				_filmCollection = new FilmCollection();
 				_selectedIndex = -1;
 

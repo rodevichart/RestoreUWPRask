@@ -17,11 +17,9 @@ namespace MovieLibrary.ApiServices
 	{
 		public IFilmService FilmService { get; set; }
 
-		public IMovieSqlHelper SqlHelper { get; set; }
 
-		public MoviesApiService(IFilmService filmService, IMovieSqlHelper movieSqlHelper)
+		public MoviesApiService(IFilmService filmService)
 		{
-			SqlHelper = movieSqlHelper;
 			FilmService = filmService;
 		}
 
@@ -29,30 +27,15 @@ namespace MovieLibrary.ApiServices
 		public async Task<IList<Film>> GetFilmsByDirectorAsync(string director)
 		{
 			
-			var sqlData = await GetSqlDataByDirector(director);
-
-			if (sqlData.Any())
-			{
-				return sqlData;
-			}
-
 			var fillData = await FilmService.GetFilmsByDirector(director);
 			
 			var result = Mapper.Map<IList<FilmDto>, IList<Film>>(fillData);
 
-			SqlHelper.AddFilmsData(result);
 			return result;
 		}
 
 		public async Task<IList<Film>> GetFilmsByNDirectorAsync()
 		{
-			var sqlData = await GetSqlData();
-
-			if (sqlData.Any())
-			{
-				return sqlData;
-			}
-
 			var fillData = new List<FilmDto>();
 			foreach (var director in GetDirectors())
 			{
@@ -60,8 +43,6 @@ namespace MovieLibrary.ApiServices
 			}
 
 			var result = Mapper.Map<IList<FilmDto>, IList<Film>>(fillData);
-
-			SqlHelper.AddFilmsData(result);
 
 			return result;
 		}
@@ -78,15 +59,5 @@ namespace MovieLibrary.ApiServices
 			};
 		}
 
-		private async Task<IList<Film>> GetSqlData()
-		{
-			return await SqlHelper.GetFilmsDataAsync();
-		}
-
-
-		private async Task<IList<Film>> GetSqlDataByDirector(string director)
-		{
-			return await SqlHelper.GetFilmsDataByDirectorAsync(director);
-		}
 	}
 }

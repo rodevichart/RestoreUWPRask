@@ -96,9 +96,7 @@
     <Compile Include="Core\IAppNavigationService.cs" />
     <Compile Include="Core\IMovieToastNotificationService.cs" />
     <Compile Include="ApiServices\MovieToastNotificationService.cs" />
-    <Compile Include="Core\IMovieSqlHelper.cs" />
     <Compile Include="ApiServices\MoviesApiService.cs" />
-    <Compile Include="ApiServices\MovieSqlHelper.cs" />
     <Compile Include="ApiServices\NavigationService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

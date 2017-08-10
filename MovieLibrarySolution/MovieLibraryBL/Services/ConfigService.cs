@@ -2,7 +2,9 @@
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Core;
 using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using MovieLibraryBL.Core;
 using MovieLibraryBL.Persistance;
@@ -14,38 +16,48 @@ namespace MovieLibraryBL.Services
 	{
 		public async Task<AppConfigurations> GetCacheTimeoutSerializeAsync()
 		{
-			var sampleFile = await GetStorageFileAsync(AppConfigurations.ConfigFile);
-			var text = await FileIO.ReadTextAsync(sampleFile);
-			var result = (AppConfigurations)JsonConvert.DeserializeObject(text, typeof(AppConfigurations));
-			return result;
-
-
-		}
-
-		public async void WriteCacheTimeoutSerializeAsync(AppConfigurations appConfigurations)
-		{
-			var sampleFile = await GetStorageFileAsync(AppConfigurations.ConfigFile);
-			var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-			using (var outputStream = stream.GetOutputStreamAt(0))
+			try
 			{
-				using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
-				{ 
-					var json = JsonConvert.SerializeObject(appConfigurations);
-					dataWriter.WriteString(json);
-					await dataWriter.StoreAsync();
-					await outputStream.FlushAsync();
-				}
-
+				var sampleFile = await GetStorageFileAsync(ApiRoutingConsts.ConfigFile);
+				var text = await FileIO.ReadTextAsync(sampleFile);
+				var result = (AppConfigurations)JsonConvert.DeserializeObject(text, typeof(AppConfigurations));
+				return result;
 			}
-			stream.Dispose(); 
+			catch (FileNotFoundException)
+			{
+				var dialog = new MessageDialog("Couldn`t find AppConfig.josn\nApp close.");
+				await dialog.ShowAsync();
+				Application.Current.Exit();
+//				CoreApplication.Exit();
+			}
+			return null;
 		}
 
-		private async Task<StorageFile> GetStorageFileAsync(string file)
+//		public async Task WriteCacheSerializeAsync(AppConfigurations appConfigurations)
+//		{
+//			var sampleFile = await GetStorageFileAsync(ApiRoutingConsts.ConfigFile);
+//			var stream = await sampleFile.OpenAsync(FileAccessMode.ReadWrite);
+//			using (var outputStream = stream.GetOutputStreamAt(0))
+//			{
+//				using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
+//				{ 
+//					var json = JsonConvert.SerializeObject(appConfigurations);
+//					dataWriter.WriteString(json);
+//					await dataWriter.StoreAsync();
+//					await outputStream.FlushAsync();
+//				}
+//
+//			}
+//			stream.Dispose(); 
+//		}
+
+		private async Task<StorageFile> GetStorageFileAsync(string path)
 		{
-			StorageFolder storageFolder =
-				ApplicationData.Current.LocalFolder;
+			var storageFolder = ApplicationData.Current.LocalFolder;
 			
-			return	await storageFolder.GetFileAsync(file);
+			var file = await storageFolder.GetFileAsync(path);
+
+			return file;
 		}
 
 

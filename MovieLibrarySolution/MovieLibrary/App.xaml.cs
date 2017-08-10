@@ -8,6 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using MovieLibrary.RoutingConfigurations;
+using MovieLibraryBL.Core;
 
 
 namespace MovieLibrary
@@ -16,14 +17,16 @@ namespace MovieLibrary
 	/// Provides application-specific behavior to supplement the default Application class.
 	/// </summary>
 	sealed partial class App : Application
-    {
+	{
+
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
+	        this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
 
@@ -42,6 +45,8 @@ namespace MovieLibrary
 				c.AddProfile<PlMappingProfile>();
 
 			});
+
+
 
 			var appView = ApplicationView.GetForCurrentView();
 			appView.TitleBar.BackgroundColor = Colors.Crimson;

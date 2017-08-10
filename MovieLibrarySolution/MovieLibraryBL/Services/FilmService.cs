@@ -17,10 +17,14 @@ namespace MovieLibraryBL.Services
 		private const string Url = "https://netflixroulette.net/api/api.php?";
 
 		private IHttpService HttpService { get; }
+		private IMovieSqlService MovieSqlService { get; }
+		private ICacheService CacheService { get; }
 
-		public FilmService(IHttpService httpService)
+		public FilmService(IHttpService httpService, IMovieSqlService movieSqlService, ICacheService cacheService)
 		{
 			HttpService = httpService;
+			MovieSqlService = movieSqlService;
+			CacheService = cacheService;
 		}
 
 		//public FilmDto GetFilmsByTitleNYear(string title, string year)
@@ -39,22 +43,36 @@ namespace MovieLibraryBL.Services
 		//}
 
 		public async Task<IList<FilmDto>> GetFilmsByDirector(string director)
-		{
+		{		
+
 			var result = new List<FilmDto>();
 
 			var url = GetUrl(Url, ApiRoutingConsts.Director, director);
 
-			var stream = await GetStream(url);
-
-			var data = (MovieDataList) new DataContractJsonSerializer(typeof(MovieDataList)).ReadObject(stream);
-
-			foreach (var d in data)
+			await CacheService.ScanDataForClean();
+			var cacheIdList = await MovieSqlService.GetCacheIdByUrl(url);
+			if (cacheIdList != null && cacheIdList.Count != 0)
 			{
-				var dto = Mapper.Map<MovieData, FilmDto>(d);
-				result.Add(dto);
+				
+					result.AddRange(await CacheService.GetMovies(url));
+
 			}
+			else
+			{
+				var stream = await GetStream(url);
+
+				var data = (MovieDataList)new DataContractJsonSerializer(typeof(MovieDataList)).ReadObject(stream);
+
+				foreach (var d in data)
+				{
+					var dto = Mapper.Map<MovieData, FilmDto>(d);
+					result.Add(dto);
+				}
 
 
+				await MovieSqlService.AddMoviesData(result, url);
+			}
+			
 			return result;
 		}
 

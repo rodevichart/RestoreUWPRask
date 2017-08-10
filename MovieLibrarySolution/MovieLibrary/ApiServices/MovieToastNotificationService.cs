@@ -25,5 +25,24 @@ namespace MovieLibrary.ApiServices
 			ToastNotificationManager.CreateToastNotifier().Show(toast);
 
 		}
+
+		public void GetToastNitification (string title, string contentText, string posterUrl = null)
+		{
+			var toastTemtpate = ToastTemplateType.ToastImageAndText02;
+			var toastXml = ToastNotificationManager.GetTemplateContent(toastTemtpate);
+
+			var toasTextElements = toastXml.GetElementsByTagName("text");
+			toasTextElements[0].AppendChild(toastXml.CreateTextNode(title));
+			toasTextElements[1].AppendChild(toastXml.CreateTextNode(contentText));
+			var toastImageElement = toastXml.GetElementsByTagName("image");
+			((Windows.Data.Xml.Dom.XmlElement)toastImageElement[0]).SetAttribute("src", posterUrl);
+
+			IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
+			((Windows.Data.Xml.Dom.XmlElement)toastNode)?.SetAttribute("duration", "long");
+
+			var toast = new ToastNotification(toastXml);
+			ToastNotificationManager.CreateToastNotifier().Show(toast);
+
+		}
 	}
 }

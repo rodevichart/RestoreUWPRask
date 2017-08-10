@@ -6,6 +6,6 @@ namespace MovieLibraryBL.Core
 	public interface IConfigService
 	{
 		Task<AppConfigurations> GetCacheTimeoutSerializeAsync();
-		void WriteCacheTimeoutSerializeAsync(AppConfigurations appConfigurations);
+		//Task WriteCacheSerializeAsync(AppConfigurations appConfigurations);
 	}
 }
