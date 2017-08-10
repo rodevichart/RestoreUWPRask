@@ -8,5 +8,6 @@ namespace MovieLibraryBL.Core
 	{
 		Task ScanDataForClean();
 		Task<List<FilmDto>> GetMovies(string url);
+		Task<bool> CheckExistMovieByUrl(string url);
 	}
 }

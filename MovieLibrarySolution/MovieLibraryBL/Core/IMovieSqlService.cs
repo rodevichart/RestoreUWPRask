@@ -15,7 +15,7 @@ namespace MovieLibraryBL.Core
 		Task DeleteMoviesById(List<string> idsList);
 		Task DeleteBuffById(string cacheId);
 		Task DeleteCacheById(string cacheId);
-		Task<List<string>> GetCacheIdByUrl(string url);
+		Task<bool> CheckIfExistUrl(string url);
 		Task<List<FilmDto>> GetCacheMovies(string url);
 	}
 }

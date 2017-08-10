@@ -44,6 +44,12 @@ namespace MovieLibraryBL.Services
 		{
 			return await _movieSqlService.GetCacheMovies(url);
 		}
-		
+
+
+		public async Task<bool> CheckExistMovieByUrl(string url)
+		{
+			return await _movieSqlService.CheckIfExistUrl(url);
+		}
+
 	}
 }

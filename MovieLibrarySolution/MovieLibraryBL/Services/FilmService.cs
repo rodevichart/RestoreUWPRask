@@ -50,8 +50,8 @@ namespace MovieLibraryBL.Services
 			var url = GetUrl(Url, ApiRoutingConsts.Director, director);
 
 			await CacheService.ScanDataForClean();
-			var cacheIdList = await MovieSqlService.GetCacheIdByUrl(url);
-			if (cacheIdList != null && cacheIdList.Count != 0)
+			var checkExist = await CacheService.CheckExistMovieByUrl(url);
+			if (checkExist)
 			{
 				
 					result.AddRange(await CacheService.GetMovies(url));

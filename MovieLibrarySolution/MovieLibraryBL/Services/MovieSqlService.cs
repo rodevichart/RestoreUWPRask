@@ -15,14 +15,11 @@ namespace MovieLibraryBL.Services
 {
 	public class MovieSqlService : IMovieSqlService
 	{
-		//private readonly IMovieSqlService _cacheService;
 		private readonly List<Guid> _movieGuids;
 
 		public MovieSqlService()
 		{
-			//_cacheService = cacheService;
-			_movieGuids = new List<Guid>();
-			
+			_movieGuids = new List<Guid>();		
 		}
 
 		public async Task InitDataBase()
@@ -32,35 +29,31 @@ namespace MovieLibraryBL.Services
 			using (var db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
-				var createMoviesTable = new SqliteCommand(MovieSqlConsts.MovieTableCommand, db);
-				var createBuffTable = new SqliteCommand(MovieSqlConsts.BuffTableCommand, db);
-				var createCacheTable = new SqliteCommand(MovieSqlConsts.CacheTableCommand, db);
-
-				try
+				using (SqliteCommand createMoviesTable = new SqliteCommand(MovieSqlConsts.MovieTableCommand, db),
+						 createBuffTable = new SqliteCommand(MovieSqlConsts.BuffTableCommand, db),
+						 createCacheTable = new SqliteCommand(MovieSqlConsts.CacheTableCommand, db))
 				{
 					await createMoviesTable.ExecuteReaderAsync();
 					await createBuffTable.ExecuteReaderAsync();
 					await createCacheTable.ExecuteReaderAsync();
-				}
-				catch (SqliteException e)
-				{					
 				}
 			}
 		}
 
 		private async Task AddBuffData(Guid idCache)
 		{
-			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
+			using (var db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 
 				db.Open();
 				foreach (var id in _movieGuids)
 				{
-					SqliteCommand insertCommand = new SqliteCommand(MovieSqlConsts.InsertBuffCommandText, db);
-					insertCommand.Parameters.AddWithValue("@CacheId", idCache.ToString());
-					insertCommand.Parameters.AddWithValue("@MovieId", id.ToString());
-					await insertCommand.ExecuteReaderAsync();
-					insertCommand.Dispose();
+					using (var insertCommand = new SqliteCommand(MovieSqlConsts.InsertBuffCommandText, db))
+					{
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, idCache.ToString());
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamMovieId, id.ToString());
+						await insertCommand.ExecuteReaderAsync();
+					}
 				}
 			}
 		}
@@ -72,12 +65,13 @@ namespace MovieLibraryBL.Services
 			{
 				db.Open();
 				var cacheId = Guid.NewGuid();
-				SqliteCommand insertCommand = new SqliteCommand(MovieSqlConsts.InsertCacheCommandText, db);
-				insertCommand.Parameters.AddWithValue("@CacheId", cacheId.ToString());
-				insertCommand.Parameters.AddWithValue("@Url", url);
-				insertCommand.Parameters.AddWithValue("@CreationData", DateTime.Now);
-				await insertCommand.ExecuteReaderAsync();
-				insertCommand.Dispose();
+				using (var insertCommand = new SqliteCommand(MovieSqlConsts.InsertCacheCommandText, db))
+				{
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId.ToString());
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamUrl, url);
+					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCreationDate, DateTime.Now);
+					await insertCommand.ExecuteReaderAsync();
+				}
 				await AddBuffData(cacheId);
 			}
 
@@ -85,53 +79,26 @@ namespace MovieLibraryBL.Services
 
 		public async Task AddMoviesData(List<FilmDto> movieDtos, string url)
 		{
-			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
+			using (var db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
 				_movieGuids.Clear();
 
 				foreach (var movie in movieDtos)
 				{
-					SqliteCommand selectCommand = new SqliteCommand(MovieSqlConsts.SelectByNameCommand, db);
-					selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamName, movie.Title);
-					SqliteCommand insertCommand = new SqliteCommand
+					using (var insertCommand = new SqliteCommand(MovieSqlConsts.InsertCommandText,db))
 					{
-						Connection = db,
-						CommandText = MovieSqlConsts.InsertCommandText
-					};
+						var movieId = Guid.NewGuid();
+						_movieGuids.Add(movieId);
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamMovieId, movieId.ToString());
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamName, movie.Title);
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamYear, movie.ReleaseYear);
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamRunTime, movie.Duration);
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamPoster, movie.Poster);
+						insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamDirector, movie.Director);
 
-					var movieId = Guid.NewGuid();
-					_movieGuids.Add(movieId);
-					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamMovieId, movieId.ToString());
-					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamName, movie.Title);
-					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamYear, movie.ReleaseYear);
-					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamRunTime, movie.Duration);
-					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamPoster, movie.Poster);
-					insertCommand.Parameters.AddWithValue(MovieSqlConsts.ParamDirector, movie.Director);
+						await insertCommand.ExecuteNonQueryAsync();
 
-					try
-					{
-						var query = await selectCommand.ExecuteReaderAsync();
-						var stringList = new List<string>();
-
-						while (query.Read())
-						{
-							stringList.Add(query.GetString(0));
-						}
-
-						if (stringList.Count == 0)
-						{
-							await insertCommand.ExecuteReaderAsync();
-						}
-
-					}
-					catch (Exception e)
-					{
-					}
-					finally
-					{
-						insertCommand.Dispose();
-						selectCommand.Dispose();
 					}
 				}
 
@@ -149,11 +116,10 @@ namespace MovieLibraryBL.Services
 			{
 				db.Open();
 
-				SqliteCommand selectCommand = new SqliteCommand(MovieSqlConsts.SelectAllCommand, db);
-
-				try
+				using (var selectCommand = new SqliteCommand(MovieSqlConsts.SelectAllCommand, db))
 				{
 					var query = await selectCommand.ExecuteReaderAsync();
+
 					while (query.Read())
 					{
 						var a = new FilmDto
@@ -167,17 +133,10 @@ namespace MovieLibraryBL.Services
 
 						dataList.Add(a);
 					}
+					return dataList;
 				}
-				catch (Exception e)
-				{
-				}
-				finally
-				{
-					selectCommand.Dispose();
-					db.Close();
-				}
+
 			}
-			return dataList;
 		}
 
 		public async Task<List<FilmDto>> GetMoviesByDirector(string director)
@@ -188,16 +147,10 @@ namespace MovieLibraryBL.Services
 			{
 				db.Open();
 
-				var selectCommand = new SqliteCommand
-				{
-					Connection = db,
-					CommandText = MovieSqlConsts.SelectByDirectorCommand
-				};
 
-				selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamDirector, director);
-
-				try
+				using (var selectCommand = new SqliteCommand(MovieSqlConsts.SelectByDirectorCommand, db))
 				{
+					selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamDirector, director);
 					var query = await selectCommand.ExecuteReaderAsync();
 
 					while (query.Read())
@@ -213,13 +166,9 @@ namespace MovieLibraryBL.Services
 							});
 
 					}
-
-				}
-				catch (Exception e)
-				{
+					return resultList;
 				}
 
-				return resultList;
 			}
 		}
 
@@ -229,8 +178,7 @@ namespace MovieLibraryBL.Services
 			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
-				var selectCommand = new SqliteCommand(MovieSqlConsts.SelectAllCacheCommand, db);
-				try
+				using (var selectCommand = new SqliteCommand(MovieSqlConsts.SelectAllCacheCommand, db))
 				{
 					var query = await selectCommand.ExecuteReaderAsync();
 					while (query.Read())
@@ -241,17 +189,10 @@ namespace MovieLibraryBL.Services
 							list.Add(query.GetString(0));
 						}
 					}
+					return list;
 				}
-				catch (SqliteException e)
-				{
-				}
-				finally
-				{
-					selectCommand.Dispose();
-				}
-			}
 
-			return list;
+			}
 		}
 
 		public async Task<List<string>> GetMoviesIdsByCacheId(string cacheId)
@@ -260,20 +201,16 @@ namespace MovieLibraryBL.Services
 			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
-				var selectCommand = new SqliteCommand(MovieSqlConsts.SelectAllMovieIdByCacheId, db);
-				selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId);
-				try
+				using (var selectCommand = new SqliteCommand(MovieSqlConsts.SelectAllMovieIdByCacheId, db))
 				{
+					selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId);
 					var query = await selectCommand.ExecuteReaderAsync();
 					while (query.Read())
 					{
 						stringList.Add(query.GetString(0));
 					}
 					return stringList;
-				}
-				catch (SqliteException e)
-				{
-					return null;
+
 				}
 			}
 		}
@@ -287,17 +224,18 @@ namespace MovieLibraryBL.Services
 				{
 					foreach (var id in idsList)
 					{
-						var deleteCommand = new SqliteCommand(MovieSqlConsts.DeleteMovieByIdCommand, db);
-						deleteCommand.Parameters.AddWithValue(MovieSqlConsts.ParamMovieId, id);
-						await deleteCommand.ExecuteReaderAsync();
-						deleteCommand.Dispose();
-					}
+						
+						using (var deleteCommand = new SqliteCommand(MovieSqlConsts.DeleteMovieByIdCommand, db))
+						{
+							deleteCommand.Parameters.AddWithValue(MovieSqlConsts.ParamMovieId, id);
+							await deleteCommand.ExecuteReaderAsync();
+						}					}
 
 				}
 				catch (SqliteException e)
 				{
-
 				}
+				
 			}
 		}
 
@@ -308,10 +246,11 @@ namespace MovieLibraryBL.Services
 				db.Open();
 				try
 				{
-					var deleteCommand = new SqliteCommand(MovieSqlConsts.DeleteBuffByIdCommand, db);
-					deleteCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId);
-					await deleteCommand.ExecuteReaderAsync();
-					deleteCommand.Dispose();
+					using (var deleteCommand = new SqliteCommand(MovieSqlConsts.DeleteBuffByIdCommand, db))
+					{
+						deleteCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId);
+						await deleteCommand.ExecuteReaderAsync();
+					}
 				}
 				catch (SqliteException e)
 				{
@@ -321,15 +260,17 @@ namespace MovieLibraryBL.Services
 
 		public async Task DeleteCacheById(string cacheId)
 		{
-			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
+			using (var db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
 				try
 				{
-					var deleteCommand = new SqliteCommand(MovieSqlConsts.DeleteCacheByIdCommand, db);
-					deleteCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId);
-					await deleteCommand.ExecuteReaderAsync();
-					deleteCommand.Dispose();
+					using (var deleteCommand = new SqliteCommand(MovieSqlConsts.DeleteCacheByIdCommand, db))
+					{
+						deleteCommand.Parameters.AddWithValue(MovieSqlConsts.ParamCacheId, cacheId);
+						await deleteCommand.ExecuteReaderAsync();
+
+					}
 				}
 				catch (SqliteException e)
 				{
@@ -337,40 +278,37 @@ namespace MovieLibraryBL.Services
 			}
 		}
 
-		public async Task<List<string>> GetCacheIdByUrl(string url)
+		public async Task<bool> CheckIfExistUrl(string url)
 		{
-			var stringList = new List<string>();
-			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
+			using (var db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
-				var selectCommand = new SqliteCommand(MovieSqlConsts.SelectCacheIdByUrl, db);
-				selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamUrl, url);
-				try
+				using (var selectCommand = new SqliteCommand(MovieSqlConsts.CheckIfExistUrlInCache, db))
 				{
+					selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamUrl, url);
+
 					var query = await selectCommand.ExecuteReaderAsync();
 					while (query.Read())
 					{
-						stringList.Add(query.GetString(0));
+						return query.GetBoolean(0);
 					}
-					return stringList;
-				}
-				catch (SqliteException e)
-				{
-					return null;
+
 				}
 			}
+			return false;
 		}
 
 		public async Task<List<FilmDto>> GetCacheMovies(string url)
 		{
 			var dataList = new List<FilmDto>();
-			using (SqliteConnection db = new SqliteConnection(MovieSqlConsts.DbFileName))
+			using (var db = new SqliteConnection(MovieSqlConsts.DbFileName))
 			{
 				db.Open();
-				var selectCommand = new SqliteCommand(MovieSqlConsts.SelectCachMoviesByUrl, db);
-				selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamUrl, url);
-				try
+
+				using (var selectCommand = new SqliteCommand(MovieSqlConsts.SelectCachMoviesByUrl, db))
 				{
+					selectCommand.Parameters.AddWithValue(MovieSqlConsts.ParamUrl, url);
+
 					var query = await selectCommand.ExecuteReaderAsync();
 					while (query.Read())
 					{
@@ -386,28 +324,8 @@ namespace MovieLibraryBL.Services
 						dataList.Add(a);
 					}
 				}
-				catch (SqliteException e)
-				{
-					return null;
-				}
 			}
 			return dataList;
 		}
-
-		////		private async void CheckForClearCache()
-		////		{
-		////			var appConfig = await ConfigService.GetCacheTimeoutSerializeAsync();
-		////			if (appConfig.NextCheck == DateTime.Now)
-		////			{
-		////				ClearCache();
-		////			}
-		////		}
-		////
-		////		private async Task<AppConfigurations> GetCachePeriodAsync()
-		////		{
-		////			var cacheTimeOut = await ConfigService.GetCacheTimeoutSerializeAsync();
-		////			return cacheTimeOut;
-		////
-		////		}
 	}
 }

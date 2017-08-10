@@ -56,7 +56,7 @@
 
 		public static string ParamDirector => "@Director";
 
-		public static string ParamCreationData => "@CreationData";
+		public static string ParamCreationDate => "@CreationData";
 
 		public static string SelectAllMoviesCommand => "SELECT * from MoviesTable;";
 
@@ -70,7 +70,9 @@
 
 		public static string DeleteCacheByIdCommand => "DELETE from CacheTable WHERE Cache_Id == @CacheId";
 
-		public static string SelectCacheIdByUrl => "SELECT Cache_Id from CacheTable WHERE URL == @Url;";
+		//public static string SelectCacheIdByUrl => "SELECT Cache_Id from CacheTable WHERE URL == @Url;";
+
+		public static string CheckIfExistUrlInCache => "SELECT EXISTS(SELECT 1 FROM CacheTable WHERE URL=@Url LIMIT 1);";
 
 		public static string SelectCachMoviesByUrl => "SELECT Name, Year, RunTime, Poster, Director from MoviesTable " +
 		                                              "Left join CacheTable on BuffTable.Cache_Id = CacheTable.Cache_Id " +
